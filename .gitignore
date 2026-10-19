@@ -1,0 +1,6 @@
+.env
+*.env
+*.key
+*.json
+*.txt
+.DS_Store
