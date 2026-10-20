@@ -11,13 +11,35 @@
   font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--text);font-size:12px}
+body{margin:0;background:var(--page);color:var(--text);font-size:12px;min-height:100vh;display:flex;flex-direction:column}
+body.home{background:#fff}
+body.home .footer .lg,body.home .footer .demo{visibility:hidden}
+.footer{background:inherit}
+.main{flex:1 0 auto}
+a.brand{color:#fff;text-decoration:none;cursor:pointer}
+[hidden]{display:none!important}
 .topbar{height:56px;background:#1d1d1b;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
 .brand{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600}
 .brand svg{width:24px;height:24px}
 .upd{font-size:12px;color:#bcaa98}
-.wrap{padding:20px 48px 44px;max-width:100%}
-.footer{position:fixed;left:0;right:0;bottom:0;height:28px;background:var(--page);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:10px;color:#6c757d;z-index:20}
+.wrap{padding:20px 48px 28px;max-width:100%}
+.hero{max-width:1312px;margin:0 auto;padding:150px 64px 80px}
+.hero .eyebrow{text-align:center;color:#6c757d;font-size:12px;letter-spacing:.04em}
+.hero h1{text-align:center;font-size:22px;font-weight:700;margin:16px 0 28px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:800px){.cards{grid-template-columns:1fr}.hero{padding:60px 20px}}
+.card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #d6d2c4;border-radius:12px;padding:30px;transition:background .15s,border-color .15s}
+.card:hover,.card:focus-visible{background:#f6f6f4;border-color:#1d1d1b;outline:none}
+.card .top{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.card .flag{font-size:32px;line-height:1}
+.card h2{margin:0;font-size:22px;font-weight:700}
+.card .desc{font-size:12px;color:#6c757d;margin-top:2px}
+.card .lbl{font-size:12px;color:#6c757d;margin-bottom:10px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{border:1px solid #d6d2c4;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:500;background:#fff}
+.card .upd2{font-size:12px;color:#6c757d;margin-bottom:16px}
+.card .go{background:#1d1d1b;color:#fff;border-radius:8px;height:41px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
+.footer{margin-top:auto;height:28px;flex:none;background:var(--page);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:10px;color:#6c757d;z-index:20}
 .footer .lg{display:flex;align-items:center;gap:10px;font-size:12px}
 .footer .lg .bar2{width:240px;height:8px;border-radius:2px}
 .footer .demo{font-size:9px;color:#6b6b6b}
@@ -50,7 +72,7 @@ body{margin:0;background:var(--page);color:var(--text);font-size:12px}
 .range input{height:28px;border:1px solid var(--line);border-radius:var(--radius);padding:0 6px;font:inherit;font-size:11px;background:var(--white)}
 
 /* table */
-.scroll{overflow:auto;max-height:calc(100vh - 56px - 20px - 28px - 44px - 28px - 16px)}
+.scroll{overflow-x:auto}
 table{border-collapse:separate;border-spacing:0;table-layout:fixed;background:none}
 th,td{padding:0;height:29px;font-weight:400}
 thead th{position:sticky;top:0;z-index:5;background:var(--page);height:36px;vertical-align:bottom;padding-bottom:4px}
@@ -86,10 +108,24 @@ td.cell.eq{background:#fff;color:var(--text)}
 </head>
 <body>
 <div class="topbar">
-  <div class="brand"><svg viewBox="0 0 24 24" fill="none"><path d="M5.6884 7.18164H3.80496V9.78559H5.6884V7.18164Z" fill="#fff"/><path d="M0 0V24H24V0H0ZM21.9331 21.9397H2.06694V2.06723H21.9331V21.9362V21.9397Z" fill="#fff"/><path d="M5.6884 13.0198H10.7051V17.3585H12.592V8.8195H15.5107V17.3585H17.3941V8.8195H20.3128V7.18164H12.592H10.7051V11.3819H5.6884V11.3715H3.80496V17.3585H5.6884V13.0198Z" fill="#fff"/></svg>Мониторинг цен</div>
+  <a class="brand" href="#/" title="На главную"><svg viewBox="0 0 24 24" fill="none"><path d="M5.6884 7.18164H3.80496V9.78559H5.6884V7.18164Z" fill="#fff"/><path d="M0 0V24H24V0H0ZM21.9331 21.9397H2.06694V2.06723H21.9331V21.9362V21.9397Z" fill="#fff"/><path d="M5.6884 13.0198H10.7051V17.3585H12.592V8.8195H15.5107V17.3585H17.3941V8.8195H20.3128V7.18164H12.592H10.7051V11.3819H5.6884V11.3715H3.80496V17.3585H5.6884V13.0198Z" fill="#fff"/></svg>Мониторинг цен</a>
   <div class="upd" id="upd"></div>
 </div>
-<div class="wrap">
+<div class="main" id="home" hidden>
+  <div class="hero">
+    <div class="eyebrow">ВЫБЕРИТЕ РЫНОК</div>
+    <h1>Мониторинг цен по рынкам</h1>
+    <div class="cards">
+      <a class="card" href="#/ru"><div class="top"><span class="flag">🇷🇺</span><div><h2>Россия</h2><div class="desc">Маркетплейсы и магазины, рубли (RUB)</div></div></div>
+        <div class="lbl">ИСТОЧНИКИ</div><div class="chips"><span class="chip">Wildberries</span><span class="chip">Ozon</span><span class="chip">Lamoda</span><span class="chip">Золотое Яблоко</span></div>
+        <div class="upd2 stamp"></div><div class="go">Открыть мониторинг</div></a>
+      <a class="card" href="#/us"><div class="top"><span class="flag">🇺🇸</span><div><h2>США</h2><div class="desc">Amazon и Shopify, доллары (USD)</div></div></div>
+        <div class="lbl">ИСТОЧНИКИ</div><div class="chips"><span class="chip">Amazon</span><span class="chip">Shopify</span></div>
+        <div class="upd2 stamp"></div><div class="go">Открыть мониторинг</div></a>
+    </div>
+  </div>
+</div>
+<div class="wrap main" id="mon" hidden>
 
   <div class="bar">
     <div class="cluster">
@@ -127,8 +163,8 @@ td.cell.eq{background:#fff;color:var(--text)}
    items:    [{sku, title, rrp, prices:{[channelId]:[ {p, base?} | null, ... по dates ]}}]
    Ниже — ДЕМО: цены сгенерированы, это не реальные данные.             */
 const DAYS_MAX = 90;
-async function loadData(){
-  const channels=[{id:'wb',name:'WB'},{id:'ozon',name:'Ozon'},{id:'lamoda',name:'Lamoda'},{id:'zya',name:'ЗЯ'}];
+async function loadData(market='ru'){
+  const channels=market==='us'?[{id:'amazon',name:'Amazon'},{id:'shopify',name:'Shopify'}]:[{id:'wb',name:'WB'},{id:'ozon',name:'Ozon'},{id:'lamoda',name:'Lamoda'},{id:'zya',name:'ЗЯ'}];
   const products=[
 ["112500","Hydro Nourishing Moisture Shampoo, 800 ml / 27 fl oz",6760],["112501","Hydro Nourishing Moisture Shampoo, 250 ml / 8.45 fl oz",3585],["112503","Hydro Intensive Repair Shampoo, 250 ml / 8.45 fl oz",3585],["112506","Hydro Nutrient Nourishing Conditioner, 250 ml / 8.45 fl oz",3679],["112507","Hydro Nutrient Nourishing Conditioner, 800 ml / 27 fl oz",6959],["112510","Hydro Deep Repair Hair Treatment, 500 ml / 16.9 fl oz",6293],["112511","Hydro Deep Repair Hair Treatment, 250 ml / 8.45 fl oz",3814],["112516","Hydro Miracle Hair Serum, 110 ml / 3.7 fl oz",3169],["112525","Liquid Silk Shampoo, 250 ml / 8.45 fl oz",3474],["112526","Liquid Silk Shampoo, 800 ml / 27 fl oz",7844],["112527","Liquid Silk Conditioner, 250 ml / 8.45 fl oz",3871],["112528","Liquid Silk Conditioner, 800 ml / 27 fl oz",8048],["112529","Liquid Silk Oil, 60 ml / 2.0 fl oz",3515],["112530","Hydro Liquid Silk Treatment, 500 ml / 16.91 fl oz",6000],["112537","Detox Therapy Shampoo, 250 ml / 8.45 fl oz",3566],["112538","Detox Therapy Shampoo, 800 ml / 27 fl oz",7131],["112539","Detox Therapy Scalp Peeling, 100 ml / 3.38 fl oz",3056],["112540","Detox Therapy Scalp Tonic, 60 ml / 2.03 fl oz",2038],["112543","Detox Therapy Scalp Scrub, 50 g / 1.76 oz",938],["112544","Detox Therapy Shampoo, 50 ml / 1.69 fl oz",1000],["112545","Golden Hour Shampoo, 50 ml / 1.69 fl oz",1000],["112546","Liquid Silk Shampoo, 50 ml / 1.69 fl oz",1000],["112548","Hydro Liquid Silk Treatment, 50 ml / 1.69 fl oz",1000],["112550","Hydro Nourishing Moisture Shampoo, 50 ml / 1.69 fl oz",940],["112551","Hydro Nutrient Nourishing Conditioner, 50 ml / 1.69 fl oz",1000],["112553","Hydro Intensive Repair Shampoo, 50 ml / 1.69 fl oz",940],["112554","Hydro Deep Repair Hair Treatment, 50 ml / 1.69 fl oz",940],["112556","Blonde Code Toning Conditioner, 250 ml / 8.45 fl oz",4075],["112557","Blonde Code Color Lock Hair Mask, 250 ml / 8.45 fl oz",3770],["112558","Blonde Code Toning Shampoo, 250 ml / 8.45 fl oz",3872],["112559","Blonde Code Toning Shampoo, 50 ml / 1.69 fl oz",1000],["112560","Blonde Code Color Lock Hair Mask, 50 ml / 1.69 fl oz",1000],["112561","Blonde Code Toning Conditioner, 50 ml / 1.69 fl oz",1000],["150002","Hydro Root Strengthening Shampoo, 800 ml / 27 fl oz",7459],["179000","Detox Therapy Scalp Scrub, 150 g / 5.29 oz",3056],["202401","Molecular Hair Cream All in One, 200 ml / 6.76 fl oz",4788],["202402","Golden Hour Hair Mask, 280 ml / 9.47 fl oz",4992],["202403","Softening Microcapsules Hair Mask, 280 ml / 9.47 fl oz",4992],["202405","Golden Hour Shampoo, 250 ml / 8.45 fl oz",3744],["202406","Golden Hour Shampoo, 800 ml / 27 fl oz",7437],["202407","Microcapsules Shampoo, 250 ml / 8.45 fl oz",3744],["202408","Microcapsules Shampoo, 800 ml / 27 fl oz",7437],["632187","Hydro Liquid Silk Treatment, 300 ml / 10.14 fl oz",4569]];
   const today=new Date(); today.setHours(12,0,0,0);
@@ -149,6 +185,7 @@ async function loadData(){
       }
       prices[ch.id]=out;
     });
+    if(market==='us'){channels.forEach(ch=>prices[ch.id]=Array(DAYS_MAX).fill(null));return {sku,title,rrp:null,prices};} // США: источника цен пока нет
     return {sku,title,rrp,prices};
   });
   return {demo:true,channels,dates,items};
@@ -215,7 +252,7 @@ function render(){
   if(!rows.length)h+=`<tr><td colspan="${2+chans.length*idx.length}" class="empty">Ничего не найдено</td></tr>`;
   rows.forEach(it=>{
     const hue=[...it.title.split(' ')[0]].reduce((a,c)=>a+c.charCodeAt(0),0)*37%360;
-    h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${fmt(it.rrp)}</td>`;
+    h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${it.rrp==null?'—':fmt(it.rrp)}</td>`;
     chans.forEach(ch=>idx.forEach((i,j)=>{
       const c=cellAt(it,ch.id,i), g=j===0?' gstart':'';
       if(!c){h+=`<td class="cell none${g}" data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}">—</td>`;return;}
@@ -237,14 +274,17 @@ function render(){
   $('#lg').style.background='linear-gradient(90deg,'+STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')+')';
 }
 
-function init(D){
-  S.data=D; D.channels.forEach(c=>S.src.add(c.id));
+let D,bound=false;
+function init(data){
+  D=data; S.data=D; S.src.clear(); D.channels.forEach(c=>S.src.add(c.id));
+  S.q='';$('#q').value='';S.onlyAlerts=false;Object.keys(S.flt).forEach(k=>S.flt[k]=false);document.querySelectorAll('[data-f]').forEach(c=>c.checked=false);S.sort=null;S.period='1';S.from=S.to=null;$('#range').classList.remove('show');
   $('#demoTag').hidden=!D.demo;
-  {const d=new Date();$('#upd').textContent='Обновлено '+d.toLocaleDateString('ru-RU')+', '+d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});}
+  
   $('#seg').innerHTML=PERIODS.map(([k,l])=>`<button data-p="${k}" class="${k===S.period?'active':''}">${l}</button>`).join('');
   $('#menuSrc').innerHTML='<div class="hint">Минимум один источник</div>'+D.channels.map(c=>`<label><input type="checkbox" data-src="${c.id}" checked> ${c.name==='ЗЯ'?'Золотое Яблоко':c.name==='WB'?'Wildberries':c.name}</label>`).join('');
   $('#d1').min=$('#d2').min=D.dates[0]; $('#d1').max=$('#d2').max=D.dates[D.dates.length-1];
 
+  if(!bound){bound=true;
   $('#q').addEventListener('input',e=>{S.q=e.target.value;render();});
   document.addEventListener('click',e=>{
     const dd=e.target.closest('.dd');
@@ -301,9 +341,20 @@ function init(D){
     const blob=new Blob(['﻿'+lines.map(r=>r.join(';')).join('\n')],{type:'text/csv;charset=utf-8'});
     const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hadat-prices.csv';a.click();URL.revokeObjectURL(a.href);
   });
+  }
   render();
 }
-loadData().then(init);
+function stamp(){const d=new Date();return 'Обновлено '+d.toLocaleDateString('ru-RU')+', '+d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});}
+function route(){
+  const m=location.hash.replace('#/','');
+  const mon=m==='ru'||m==='us';
+  document.body.classList.toggle('home',!mon);
+  $('#home').hidden=mon; $('#mon').hidden=!mon; $('#tip').style.display='none';
+  $('#upd').textContent=stamp(); document.querySelectorAll('.stamp').forEach(e=>e.textContent=stamp()+' · демо-данные');
+  window.scrollTo(0,0);
+  if(mon)loadData(m).then(init);
+}
+addEventListener('hashchange',route); route();
 </script>
 </body>
 </html>
