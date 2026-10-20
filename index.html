@@ -674,7 +674,7 @@ function drawChart(it,cur){
   for(let t=0;t<=4;t++){const v=lo+(hi-lo)*t/4,y=Y(v);g+=`<line x1="${pl}" x2="${W-pr}" y1="${y}" y2="${y}"/><text x="${pl-8}" y="${y+3}" text-anchor="end">${fmt(Math.round(v/10)*10)}</text>`;}
   g+='</g>';
   const step=Math.ceil(n/8); for(let i=i0;i<D.dates.length;i+=step)g+=`<text x="${X(i)}" y="${H-8}" text-anchor="middle">${fmtDate(D.dates[i])}</text>`;
-  if(showR){const yr=Y(it.rrp);g+=`<line class="rrp" x1="${pl}" x2="${W-pr}" y1="${yr}" y2="${yr}"/><text x="${W-pr+8}" y="${yr-3}" style="fill:#d93a2b;font-size:9px">РРЦ</text><text x="${W-pr+8}" y="${yr+9}" style="fill:#d93a2b;font-weight:600;font-size:11px">${fmt(it.rrp)}</text>`;}
+  let rr=''; if(showR){const yr=Y(it.rrp);rr=`<line class="rrp" x1="${pl}" x2="${W-pr}" y1="${yr}" y2="${yr}"/><text x="${W-pr+8}" y="${yr-3}" style="fill:#d93a2b;font-size:9px">РРЦ</text><text x="${W-pr+8}" y="${yr+9}" style="fill:#d93a2b;font-weight:600;font-size:11px">${fmt(it.rrp)}</text>`;}
   chans.forEach(c=>{
     let d='',open=false;
     for(let i=i0;i<D.dates.length;i++){const x=it.prices[S.mode][c.id][i];
@@ -682,6 +682,7 @@ function drawChart(it,cur){
     g+=`<path class="ln" d="${d}" stroke="${c.col}"/>`;
     if(n<=14)for(let i=i0;i<D.dates.length;i++){const x=it.prices[S.mode][c.id][i];if(priced(x))g+=`<circle cx="${X(i)}" cy="${Y(x.p)}" r="2.5" fill="${c.col}"/>`;}
   });
+  g+=rr; // РРЦ рисуется поверх линий цен
   g+=`<line class="vg" id="vg" y1="${pt}" y2="${H-pb}" style="display:none"/>`;
   box.innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">${g}</svg>`;
   const svg=box.querySelector('svg'), vg=svg.querySelector('#vg'), tip=$('#tip');
