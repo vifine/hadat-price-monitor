@@ -82,7 +82,8 @@ td{border-bottom:1px solid var(--page)}
 .c-rrp{position:sticky;left:280px;z-index:4;width:56px;min-width:56px;background:var(--white);text-align:right;font-size:9px;padding-right:6px}
 thead .c-prod,thead .c-rrp{z-index:7;background:var(--page)}
 .prod{display:flex;align-items:center;gap:8px;padding:2px 8px 2px 4px;height:29px}
-.sw{width:24px;height:24px;flex:none}
+.sw{width:24px;height:24px;flex:none;overflow:hidden}
+.sw img{display:block;width:24px;height:24px;object-fit:cover}
 .pt{min-width:0;line-height:1.15}
 .pt b{display:block;font-weight:500;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:228px}
 .pt i{font-style:normal;font-size:8px;color:var(--text2)}
@@ -156,38 +157,64 @@ td.cell.eq{background:#fff;color:var(--text)}
 
 <script>
 /* ================== ДАННЫЕ ==================
-   Единственное место, которое меняется при подключении реальной базы.
+   Единственное место, которое меняется при смене источника данных.
    Возвращает { demo, channels, dates, items }:
-   channels: [{id, name}]
+   channels: [{id, name, full}]
    dates:    ['YYYY-MM-DD', ...]  (по возрастанию, последняя = сегодня)
    items:    [{sku, title, rrp, prices:{[channelId]:[ {p, base?} | null, ... по dates ]}}]
-   Ниже — ДЕМО: цены сгенерированы, это не реальные данные.             */
+   Источник: Supabase (только чтение, ключ publishable — он публичный по дизайну;
+   запись закрыта политиками RLS). Пока в price_observations нет строк,
+   цены для России генерируются как ДЕМО (demo:true), товары и РРЦ — настоящие. */
+const SB={url:'https://mojivnucnnmbvkbjodzg.supabase.co/rest/v1',key:'sb_publishable_q-EOQ9TtjVXZJvbUbKpTOg_yrAqs0Rv'};
 const DAYS_MAX = 90;
+const SHORT={wb:'WB',zya:'ЗЯ'};
+async function sb(path){
+  const r=await fetch(SB.url+path,{headers:{apikey:SB.key,Authorization:'Bearer '+SB.key}});
+  if(!r.ok)throw new Error('База: '+r.status);
+  return r.json();
+}
+async function sbAll(path){ // постранично: PostgREST отдаёт не больше 1000 строк за запрос
+  let out=[],from=0,step=1000;
+  for(;;){
+    const r=await fetch(SB.url+path,{headers:{apikey:SB.key,Authorization:'Bearer '+SB.key,Range:from+'-'+(from+step-1)}});
+    if(!r.ok)throw new Error('База: '+r.status);
+    const rows=await r.json(); out=out.concat(rows);
+    if(rows.length<step)return out; from+=step;
+  }
+}
 async function loadData(market='ru'){
-  const channels=market==='us'?[{id:'amazon',name:'Amazon'},{id:'shopify',name:'Shopify'}]:[{id:'wb',name:'WB'},{id:'ozon',name:'Ozon'},{id:'lamoda',name:'Lamoda'},{id:'zya',name:'ЗЯ'}];
-  const products=[
-["112500","Hydro Nourishing Moisture Shampoo, 800 ml / 27 fl oz",6760],["112501","Hydro Nourishing Moisture Shampoo, 250 ml / 8.45 fl oz",3585],["112503","Hydro Intensive Repair Shampoo, 250 ml / 8.45 fl oz",3585],["112506","Hydro Nutrient Nourishing Conditioner, 250 ml / 8.45 fl oz",3679],["112507","Hydro Nutrient Nourishing Conditioner, 800 ml / 27 fl oz",6959],["112510","Hydro Deep Repair Hair Treatment, 500 ml / 16.9 fl oz",6293],["112511","Hydro Deep Repair Hair Treatment, 250 ml / 8.45 fl oz",3814],["112516","Hydro Miracle Hair Serum, 110 ml / 3.7 fl oz",3169],["112525","Liquid Silk Shampoo, 250 ml / 8.45 fl oz",3474],["112526","Liquid Silk Shampoo, 800 ml / 27 fl oz",7844],["112527","Liquid Silk Conditioner, 250 ml / 8.45 fl oz",3871],["112528","Liquid Silk Conditioner, 800 ml / 27 fl oz",8048],["112529","Liquid Silk Oil, 60 ml / 2.0 fl oz",3515],["112530","Hydro Liquid Silk Treatment, 500 ml / 16.91 fl oz",6000],["112537","Detox Therapy Shampoo, 250 ml / 8.45 fl oz",3566],["112538","Detox Therapy Shampoo, 800 ml / 27 fl oz",7131],["112539","Detox Therapy Scalp Peeling, 100 ml / 3.38 fl oz",3056],["112540","Detox Therapy Scalp Tonic, 60 ml / 2.03 fl oz",2038],["112543","Detox Therapy Scalp Scrub, 50 g / 1.76 oz",938],["112544","Detox Therapy Shampoo, 50 ml / 1.69 fl oz",1000],["112545","Golden Hour Shampoo, 50 ml / 1.69 fl oz",1000],["112546","Liquid Silk Shampoo, 50 ml / 1.69 fl oz",1000],["112548","Hydro Liquid Silk Treatment, 50 ml / 1.69 fl oz",1000],["112550","Hydro Nourishing Moisture Shampoo, 50 ml / 1.69 fl oz",940],["112551","Hydro Nutrient Nourishing Conditioner, 50 ml / 1.69 fl oz",1000],["112553","Hydro Intensive Repair Shampoo, 50 ml / 1.69 fl oz",940],["112554","Hydro Deep Repair Hair Treatment, 50 ml / 1.69 fl oz",940],["112556","Blonde Code Toning Conditioner, 250 ml / 8.45 fl oz",4075],["112557","Blonde Code Color Lock Hair Mask, 250 ml / 8.45 fl oz",3770],["112558","Blonde Code Toning Shampoo, 250 ml / 8.45 fl oz",3872],["112559","Blonde Code Toning Shampoo, 50 ml / 1.69 fl oz",1000],["112560","Blonde Code Color Lock Hair Mask, 50 ml / 1.69 fl oz",1000],["112561","Blonde Code Toning Conditioner, 50 ml / 1.69 fl oz",1000],["150002","Hydro Root Strengthening Shampoo, 800 ml / 27 fl oz",7459],["179000","Detox Therapy Scalp Scrub, 150 g / 5.29 oz",3056],["202401","Molecular Hair Cream All in One, 200 ml / 6.76 fl oz",4788],["202402","Golden Hour Hair Mask, 280 ml / 9.47 fl oz",4992],["202403","Softening Microcapsules Hair Mask, 280 ml / 9.47 fl oz",4992],["202405","Golden Hour Shampoo, 250 ml / 8.45 fl oz",3744],["202406","Golden Hour Shampoo, 800 ml / 27 fl oz",7437],["202407","Microcapsules Shampoo, 250 ml / 8.45 fl oz",3744],["202408","Microcapsules Shampoo, 800 ml / 27 fl oz",7437],["632187","Hydro Liquid Silk Treatment, 300 ml / 10.14 fl oz",4569]];
   const today=new Date(); today.setHours(12,0,0,0);
   const dates=[]; for(let i=DAYS_MAX-1;i>=0;i--){const d=new Date(today);d.setDate(d.getDate()-i);dates.push(d.toISOString().slice(0,10));}
-  let seed=20261020; const rnd=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
-  const items=products.map(([sku,title,rrp])=>{
-    const prices={};
-    channels.forEach(ch=>{
+  const [srcs,products,rrps]=await Promise.all([
+    sb('/sources?select=id,name&active=eq.true&order=sort&market_id=eq.'+market),
+    sb('/products?select=sku,title&order=sku'),
+    sb('/product_rrp?select=sku,rrp&market_id=eq.'+market)
+  ]);
+  const channels=srcs.map(x=>({id:x.id,name:SHORT[x.id]||x.name,full:x.name}));
+  const rrpBy=Object.fromEntries(rrps.map(x=>[x.sku,+x.rrp]));
+  const obs=channels.length?await sbAll('/price_observations?select=sku,source_id,observed_on,price,base_price,status&order=id&observed_on=gte.'+dates[0]+'&source_id=in.('+channels.map(c=>c.id).join(',')+')'):[];
+  const items=products.map(x=>({sku:x.sku,title:x.title,rrp:rrpBy[x.sku]??null,prices:Object.fromEntries(channels.map(c=>[c.id,Array(DAYS_MAX).fill(null)]))}));
+  const bySku=Object.fromEntries(items.map(x=>[x.sku,x]));
+  if(obs.length){
+    obs.forEach(o=>{const it=bySku[o.sku],i=dates.indexOf(o.observed_on); if(!it||i<0)return;
+      it.prices[o.source_id][i]=o.status==='ok'&&o.price!=null?{p:+o.price,base:o.base_price!=null?+o.base_price:undefined}:null;});
+    return {demo:false,channels,dates,items};
+  }
+  if(market==='ru'){ // ДЕМО-цены, пока нет реального источника
+    let seed=20261020; const rnd=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
+    items.forEach(it=>channels.forEach(ch=>{
       let k=0.82+rnd()*0.36, hasData=rnd()>0.07, out=[];
       for(let i=0;i<DAYS_MAX;i++){
-        if(rnd()<0.12) k+= (rnd()-0.5)*0.08;
+        if(rnd()<0.12) k+=(rnd()-0.5)*0.08;
         k=Math.min(1.25,Math.max(0.7,k));
-        if(!hasData || (rnd()<0.01)){out.push(null);continue;}
-        let p=Math.round(rrp*k/10)*10;
-        if(rnd()<0.18) p=rrp;
-        const disc=rnd()<0.14;
-        out.push(disc?{p:Math.round(p*0.9/10)*10,base:p}:{p});
+        if(!hasData||rnd()<0.01){out.push(null);continue;}
+        let pr=Math.round(it.rrp*k/10)*10;
+        if(rnd()<0.18) pr=it.rrp;
+        out.push(rnd()<0.14?{p:Math.round(pr*0.9/10)*10,base:pr}:{p:pr});
       }
-      prices[ch.id]=out;
-    });
-    if(market==='us'){channels.forEach(ch=>prices[ch.id]=Array(DAYS_MAX).fill(null));return {sku,title,rrp:null,prices};} // США: источника цен пока нет
-    return {sku,title,rrp,prices};
-  });
+      it.prices[ch.id]=out;
+    }));
+  }
   return {demo:true,channels,dates,items};
 }
 
@@ -252,7 +279,7 @@ function render(){
   if(!rows.length)h+=`<tr><td colspan="${2+chans.length*idx.length}" class="empty">Ничего не найдено</td></tr>`;
   rows.forEach(it=>{
     const hue=[...it.title.split(' ')[0]].reduce((a,c)=>a+c.charCodeAt(0),0)*37%360;
-    h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${it.rrp==null?'—':fmt(it.rrp)}</td>`;
+    h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"><img src="swatches/${it.sku}.webp" width="24" height="24" alt="" loading="lazy" onerror="this.remove()"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${it.rrp==null?'—':fmt(it.rrp)}</td>`;
     chans.forEach(ch=>idx.forEach((i,j)=>{
       const c=cellAt(it,ch.id,i), g=j===0?' gstart':'';
       if(!c){h+=`<td class="cell none${g}" data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}">—</td>`;return;}
@@ -289,7 +316,7 @@ function init(data){
   $('#demoTag').hidden=!D.demo;
   
   $('#seg').innerHTML=PERIODS.map(([k,l])=>`<button data-p="${k}" class="${k===S.period?'active':''}">${l}</button>`).join('');
-  $('#menuSrc').innerHTML='<div class="hint">Минимум один источник</div>'+D.channels.map(c=>`<label><input type="checkbox" data-src="${c.id}" checked> ${c.name==='ЗЯ'?'Золотое Яблоко':c.name==='WB'?'Wildberries':c.name}</label>`).join('');
+  $('#menuSrc').innerHTML='<div class="hint">Минимум один источник</div>'+D.channels.map(c=>`<label><input type="checkbox" data-src="${c.id}" checked> ${c.full}</label>`).join('');
   $('#d1').min=$('#d2').min=D.dates[0]; $('#d1').max=$('#d2').max=D.dates[D.dates.length-1];
 
   if(!bound){bound=true;
@@ -360,7 +387,7 @@ function route(){
   $('#home').hidden=mon; $('#mon').hidden=!mon; $('#tip').style.display='none';
   $('#upd').textContent=stamp(); document.querySelectorAll('.stamp').forEach(e=>e.textContent=stamp()+' · демо-данные');
   window.scrollTo(0,0);
-  if(mon)loadData(m).then(init);
+  if(mon)loadData(m).then(init).catch(e=>{$('#tbl').innerHTML='<tbody><tr><td class="empty">Не удалось загрузить данные: '+e.message+'</td></tr></tbody>';});
 }
 addEventListener('hashchange',route); route();
 </script>
