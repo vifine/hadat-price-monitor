@@ -125,6 +125,8 @@ button.kpi.on{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
 .kpi .d{font-size:10px;color:var(--text2);margin-top:1px}
 .kpi .d.bad{color:#c8412f}.kpi .d.good{color:#3c9a5a}
 .kcap{position:sticky;left:48px;font-size:10px;color:var(--text2);margin:2px 0 6px}
+.act{position:sticky;left:48px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text2);margin:0 0 10px;min-height:20px}
+.act b{color:var(--text);font-weight:600}
 @media(max-width:1100px){.kpis{grid-template-columns:repeat(3,minmax(130px,1fr))}}
 
 #pimg{position:fixed;z-index:60;pointer-events:none;display:none;width:200px;height:200px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.14);padding:6px}
@@ -200,29 +202,18 @@ table.st td.dev{font-weight:600}
     <div class="cluster">
       <span style="position:relative;display:inline-block"><svg class="sico" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="5" cy="5" r="3.6"/><path d="M8 8l3 3"/></svg><input id="q" class="search" placeholder="Поиск по названию или SKU" autocomplete="off"></span>
       <div class="dd" id="ddSrc"><button class="btn" type="button" id="btnSrc">Источники</button><div class="menu" id="menuSrc"></div></div>
-      <div class="dd" id="ddFlt"><button class="btn" type="button" id="btnFlt">Фильтры</button>
-        <div class="menu">
-          <label><input type="checkbox" data-f="disc"> Со скидкой</label>
-          <label><input type="checkbox" data-f="nop"> Нет цены</label>
-          <label><input type="checkbox" data-f="below"> Ниже РРЦ</label>
-          <label><input type="checkbox" data-f="above"> Выше РРЦ</label>
-          <label><input type="checkbox" data-f="oos"> Нет в наличии</label>
-        </div>
-      </div>
       <div class="seg" id="mode" title="Цена полки — на витрине; цена кассы — в корзине после всех скидок площадки"><button data-m="shelf" class="active">Цена полки</button><button data-m="ck">Цена кассы</button></div>
-      <span class="count" id="cnt"></span>
-      <button class="reset" id="reset" hidden>Сбросить</button>
     </div>
     <div class="cluster">
       <div class="seg" id="seg"></div>
       <span class="range" id="range"><input type="date" id="d1"><span>—</span><input type="date" id="d2"></span>
-      <button class="btn" id="alerts" type="button"></button>
       <button class="btn" id="exp" type="button">Экспорт</button>
     </div>
   </div>
 
   <div class="kcap" id="kcap"></div>
   <div class="kpis" id="kpis"></div>
+  <div class="act" id="act"></div>
   <div class="scroll" id="scroll"><table id="tbl"></table></div>
 </div>
 <div class="main skuv" id="skuv" hidden>
@@ -360,9 +351,9 @@ const pct=(a,b)=>((a/b-1)*100);
 const sgn=v=>(v>0?'+':'')+v.toFixed(1).replace('.',',')+'%';
 
 const CH='<svg class="chev" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 2.5l3 3 3-3"/></svg>';
-const S={data:null,q:'',src:new Set(),flt:{disc:false,nop:false,below:false,above:false,oos:false},mode:'shelf',period:'1',from:null,to:null,sort:null,onlyAlerts:false};
+const S={data:null,q:'',src:new Set(),flt:{below:false,above:false,disc:false,oos:false,nop:false,chg:false},mode:'shelf',period:'1',from:null,to:null,sort:null};
 const MODE_L={shelf:'цена полки',ck:'цена кассы'};
-const PERIODS=[['1','Сегодня'],['7','7 дней'],['14','14 дней'],['30','30 дней'],['90','90 дней'],['custom','Custom range']];
+const PERIODS=[['1','Сегодня'],['7','7 дней'],['14','14 дней'],['30','30 дней'],['90','90 дней'],['custom','Свой период']];
 
 function visibleIdx(){
   const n=S.data.dates.length;
@@ -378,24 +369,31 @@ function changeAt(it,ch,i){const c=cellAt(it,ch,i),p=i>0?cellAt(it,ch,i-1):null;
 function lastChange(it,ch){return changeAt(it,ch,S.data.dates.length-1);}
 const matchQ=it=>{const q=S.q.trim().toLowerCase();return !q||it.title.toLowerCase().includes(q)||it.sku.includes(q);};
 
-function rowsFiltered(idx){
-  return S.data.items.filter(it=>{
-    if(!matchQ(it))return false;
-    const chs=[...S.src];
-    if(S.flt.disc&&!chs.some(ch=>idx.some(i=>cellAt(it,ch,i)?.base)))return false;
-    if(S.flt.nop&&!chs.some(ch=>idx.some(i=>!cellAt(it,ch,i))))return false;
-    if(S.flt.below&&!chs.some(ch=>idx.some(i=>{const c=cellAt(it,ch,i);return priced(c)&&c.p<it.rrp;})))return false;
-    if(S.flt.above&&!chs.some(ch=>idx.some(i=>{const c=cellAt(it,ch,i);return priced(c)&&c.p>it.rrp;})))return false;
-    if(S.flt.oos&&!chs.some(ch=>idx.some(i=>cellAt(it,ch,i)?.oos)))return false;
-    if(S.onlyAlerts&&!chs.some(ch=>{const v=lastChange(it,ch);return v!==null&&Math.abs(v)>=5;}))return false;
-    return true;
-  });
+/* Статусы — всегда на последний день видимого периода, по выбранным источникам.
+   Несколько выбранных карточек — «или». */
+const FLT=[['below','Ниже РРЦ'],['above','Выше РРЦ'],['disc','Со скидкой'],['oos','Нет в наличии'],['nop','Нет цены'],['chg','Цена изменилась ≥5%']];
+const CHG_T=5;
+function cellHas(k,it,ch,i){
+  const c=cellAt(it,ch,i);
+  switch(k){
+    case 'below':return priced(c)&&it.rrp!=null&&c.p<it.rrp;
+    case 'above':return priced(c)&&it.rrp!=null&&c.p>it.rrp;
+    case 'disc':return priced(c)&&!!c.base;
+    case 'oos':return !!c?.oos;
+    case 'nop':return !c;
+    case 'chg':{const v=changeAt(it,ch,i);return v!=null&&Math.abs(v)>=CHG_T;}
+  }
 }
-function alertCount(){let n=0;S.data.items.forEach(it=>S.data.channels.forEach(ch=>{if(S.src.has(ch.id)){const v=lastChange(it,ch.id);if(v!==null&&Math.abs(v)>=5)n++;}}));return n;}
+const itemHas=(k,it,i)=>i>=0&&[...S.src].some(ch=>cellHas(k,it,ch,i));
+const lastIdx=()=>{const idx=visibleIdx();return idx[idx.length-1];};
+function rowsFiltered(){
+  const L=lastIdx(), on=FLT.map(f=>f[0]).filter(k=>S.flt[k]);
+  return S.data.items.filter(it=>matchQ(it)&&(!on.length||on.some(k=>itemHas(k,it,L))));
+}
 
 function render(){
   const D=S.data, idx=visibleIdx(), chans=D.channels.filter(c=>S.src.has(c.id));
-  let rows=rowsFiltered(idx);
+  let rows=rowsFiltered();
   if(S.sort){
     const {key,dir}=S.sort;
     const val=it=>key==='rrp'?it.rrp:(()=>{const c=cellAt(it,key.ch,key.i);return priced(c)?c.p:null;})();
@@ -429,54 +427,42 @@ function render(){
     h+='</tr>';
   });
   $('#tbl').innerHTML=h+'</tbody>';
-  $('#cnt').textContent=`${rows.length} из ${D.items.length}`;
   renderKpis(idx,chans);
-  const dirty=S.q||Object.values(S.flt).some(Boolean)||S.onlyAlerts||S.src.size!==D.channels.length;
-  $('#reset').hidden=!dirty;
+  const on=FLT.filter(f=>S.flt[f[0]]).map(f=>f[1]);
+  const dirty=S.q||on.length||S.src.size!==D.channels.length;
+  $('#act').innerHTML=(on.length?`Показано: <b>${on.join(', ')}</b> · `:'')+`<b>${rows.length}</b> из ${D.items.length} товаров`+(dirty?' · <button class="reset" id="reset" type="button">Сбросить</button>':'');
   $('#btnSrc').innerHTML='Источники · '+S.src.size+CH;
-  const nf=Object.values(S.flt).filter(Boolean).length;
-  $('#btnFlt').innerHTML='Фильтры'+(nf?' · '+nf:'')+CH;
-  $('#btnFlt').classList.toggle('on',nf>0);
-  const ac=alertCount(); const ab=$('#alerts'); ab.textContent='Алерты · '+ac; ab.classList.toggle('on',S.onlyAlerts);
   layout();
   $('#lg').style.background='linear-gradient(90deg,'+STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')+')';
 }
 
-/* сводка: позиции «товар × источник» на последний видимый день и изменение к предыдущему */
-function dayStats(i,chans){
+/* сводка: число товаров со статусом на последний день периода (как в таблице) и изменение к предыдущему дню */
+function kStats(i){
   if(i<0)return null;
-  const s={pos:0,priced:0,below:0,above:0,dev:0,disc:0,oos:0,up:0,down:0};
-  S.data.items.forEach(it=>{ if(!matchQ(it)||it.rrp==null)return;
-    chans.forEach(ch=>{ s.pos++; const c=cellAt(it,ch.id,i); if(!c)return;
-      if(c.oos){s.oos++;return;}
-      s.priced++; s.dev+=pct(c.p,it.rrp);
-      if(c.p<it.rrp)s.below++; else if(c.p>it.rrp)s.above++;
-      if(c.base)s.disc++;
-      const v=changeAt(it,ch.id,i); if(v>0)s.up++; else if(v<0)s.down++;
-    });
+  const s={}; FLT.forEach(([k])=>s[k]=0); s.pos=0; s.dev=0; s.priced=0; s.up=0; s.down=0;
+  S.data.items.forEach(it=>{ if(!matchQ(it))return;
+    FLT.forEach(([k])=>{if(itemHas(k,it,i))s[k]++;});
+    S.src.forEach(ch=>{ s.pos++; const c=cellAt(it,ch,i);
+      if(priced(c)&&it.rrp){s.priced++;s.dev+=pct(c.p,it.rrp);}
+      const v=changeAt(it,ch,i); if(v!=null&&v>=CHG_T)s.up++; else if(v!=null&&v<=-CHG_T)s.down++; });
   });
   s.avg=s.priced?s.dev/s.priced:null;
   return s;
 }
-function renderKpis(idx,chans){
-  const L=idx[idx.length-1], cur=dayStats(L,chans), prv=dayStats(L-1,chans), D=S.data;
-  const show=cur&&(cur.priced||cur.oos);
+function renderKpis(idx){
+  const L=idx[idx.length-1], cur=kStats(L), prv=kStats(L-1), D=S.data;
+  const show=cur&&cur.priced>0;
   $('#kpis').hidden=$('#kcap').hidden=!show; if(!show)return;
-  const delta=(k,badUp)=>{ if(!prv)return '<div class="d">&nbsp;</div>';
-    const d=cur[k]-prv[k]; if(!d)return '<div class="d">без изменений</div>';
-    const cls=badUp==null?'':(d>0===badUp?' bad':' good');
+  const BAD={below:true,oos:true,nop:true};
+  const delta=k=>{ if(!prv)return '<div class="d">&nbsp;</div>';
+    const d=cur[k]-prv[k]; if(!d)return `<div class="d">без изменений к ${fmtDate(D.dates[L-1])}</div>`;
+    const cls=BAD[k]?(d>0?' bad':' good'):'';
     return `<div class="d${cls}">${d>0?'↑ +':'↓ −'}${Math.abs(d)} к ${fmtDate(D.dates[L-1])}</div>`; };
-  const card=(f,label,val,sub,dl)=>{const tag=f?'button':'div',on=f&&S.flt[f]?' on':'';
-    return `<${tag} class="kpi${on}"${f?` data-k="${f}" type="button" title="Показать только эти товары"`:''}><div class="k">${label}</div><div class="v">${val}${sub?` <small>${sub}</small>`:''}</div>${dl}</${tag}>`;};
-  const avgD=prv&&prv.avg!=null&&cur.avg!=null?cur.avg-prv.avg:null;
-  $('#kcap').textContent=`Сводка на ${fmtDate(D.dates[L])} · ${MODE_L[S.mode]} · позиций «товар × источник»: ${cur.pos}`;
-  $('#kpis').innerHTML=
-    card('below','Ниже РРЦ',cur.below,'из '+cur.priced,delta('below',true))+
-    card('above','Выше РРЦ',cur.above,'',delta('above',null))+
-    card(null,'Средняя цена к РРЦ',cur.avg==null?'—':sgn(cur.avg),'',`<div class="d">${avgD==null?'&nbsp;':(Math.abs(avgD)<0.05?'без изменений':(avgD>0?'↑ +':'↓ −')+Math.abs(avgD).toFixed(1).replace('.',',')+' п.п.')}</div>`)+
-    card('disc','Со скидкой',cur.disc,'',delta('disc',null))+
-    card('oos','Нет в наличии',cur.oos,'',delta('oos',true))+
-    card(null,'Цена изменилась',`↑ ${cur.up} · ↓ ${cur.down}`,'',`<div class="d">${L>0?'к '+fmtDate(D.dates[L-1]):'&nbsp;'}</div>`);
+  $('#kcap').textContent=`Товаров со статусом на ${fmtDate(D.dates[L])} · ${MODE_L[S.mode]}`+(cur.avg!=null?` · средняя цена к РРЦ ${sgn(cur.avg)}`:'')+' · клик по карточке — фильтр, можно выбрать несколько';
+  $('#kpis').innerHTML=FLT.map(([k,l])=>{
+    const sub=k==='chg'?`цен ↑${cur.up} ↓${cur.down}`:'';
+    return `<button class="kpi${S.flt[k]?' on':''}" data-k="${k}" type="button"><div class="k">${l}</div><div class="v">${cur[k]}${sub?` <small>${sub}</small>`:''}</div>${delta(k)}</button>`;
+  }).join('');
 }
 
 let D,bound=false,PW=280;
@@ -487,14 +473,14 @@ function layout(){
   const b=document.querySelector('#mon .bar'); if(!b||b.offsetParent===null){f.style.width='';return;}
   f.style.width=document.documentElement.clientWidth+'px';
   const w=(document.documentElement.clientWidth-96)+'px';
-  b.style.width=w; $('#kpis').style.width=w; $('#kcap').style.width=w;
+  b.style.width=w; $('#kpis').style.width=w; $('#kcap').style.width=w; $('#act').style.width=w;
   document.documentElement.style.setProperty('--barh',b.offsetHeight+'px');
   const r=document.querySelector('#tbl thead tr'); if(r)document.documentElement.style.setProperty('--r1h',r.offsetHeight+'px');
 }
 addEventListener('resize',layout);
 function init(data){
   D=data; S.data=D; S.src.clear(); D.channels.forEach(c=>S.src.add(c.id));
-  S.q='';$('#q').value='';S.onlyAlerts=false;Object.keys(S.flt).forEach(k=>S.flt[k]=false);document.querySelectorAll('[data-f]').forEach(c=>c.checked=false);S.sort=null;S.period='1';S.from=S.to=null;$('#range').classList.remove('show');
+  S.q='';$('#q').value='';Object.keys(S.flt).forEach(k=>S.flt[k]=false);S.sort=null;S.period='1';S.from=S.to=null;$('#range').classList.remove('show');
   $('#demoTag').hidden=!D.demo;
   
   $('#seg').innerHTML=PERIODS.map(([k,l])=>`<button data-p="${k}" class="${k===S.period?'active':''}">${l}</button>`).join('');
@@ -513,14 +499,13 @@ function init(data){
     if(e.target.checked)S.src.add(id); else if(S.src.size>1)S.src.delete(id); else e.target.checked=true;
     render();
   });
-  $('#ddFlt').addEventListener('change',e=>{const f=e.target.dataset.f;if(f){S.flt[f]=e.target.checked;render();}});
   $('#mode').addEventListener('click',e=>{
     const m=e.target.dataset.m; if(!m||m===S.mode)return; S.mode=m;
     document.querySelectorAll('#mode button').forEach(b=>b.classList.toggle('active',b.dataset.m===m)); render();
   });
   $('#kpis').addEventListener('click',e=>{
     const f=e.target.closest('[data-k]')?.dataset.k; if(!f)return;
-    S.flt[f]=!S.flt[f]; const cb=document.querySelector(`[data-f="${f}"]`); if(cb)cb.checked=S.flt[f]; render();
+    S.flt[f]=!S.flt[f]; render();
   });
   $('#seg').addEventListener('click',e=>{
     const p=e.target.dataset.p; if(!p)return; S.period=p; S.sort=null;
@@ -529,10 +514,8 @@ function init(data){
   });
   $('#d1').addEventListener('change',e=>{S.from=e.target.value;render();});
   $('#d2').addEventListener('change',e=>{S.to=e.target.value;render();});
-  $('#alerts').addEventListener('click',()=>{S.onlyAlerts=!S.onlyAlerts;render();});
-  $('#reset').addEventListener('click',()=>{
-    S.q='';$('#q').value='';S.onlyAlerts=false;Object.keys(S.flt).forEach(k=>S.flt[k]=false);
-    document.querySelectorAll('[data-f]').forEach(c=>c.checked=false);
+  $('#act').addEventListener('click',e=>{ if(e.target.id!=='reset')return;
+    S.q='';$('#q').value='';Object.keys(S.flt).forEach(k=>S.flt[k]=false);
     D.channels.forEach(c=>S.src.add(c.id));document.querySelectorAll('[data-src]').forEach(c=>c.checked=true);render();
   });
   $('#tbl').addEventListener('click',e=>{
