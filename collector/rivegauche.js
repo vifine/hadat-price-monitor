@@ -1,10 +1,10 @@
 /*
  * Сборщик цен: Рив Гош (source_id = "rivegauche", пока только в файлах)
- * Открыть по очереди (в ОДНОМ browser_batch):
- *   1) https://rivegauche.ru/search?text=hadat            → ждать 5 с → выполнить сниппет
- *   2) https://rivegauche.ru/search?text=hadat&offset=36  → ждать 5 с → выполнить сниппет
- *   3) get_page_text
- * Сниппет копит офферы в sessionStorage (ключ hadat_rg), поэтому вторая страница выдаёт общий итог.
+ * Открыть: https://rivegauche.ru/search?text=hadat → ждать 5 с → выполнить сниппет → get_page_text.
+ * 20.10.2026 после прокрутки на первой странице оказались все 50 товаров; вторая страница
+ * (&offset=36) новых не добавила. Если товаров станет больше — в том же browser_batch открыть
+ * https://rivegauche.ru/search?text=hadat&offset=36, снова выполнить сниппет и только потом get_page_text:
+ * сниппет копит офферы в sessionStorage (ключ hadat_rg) и выводит общий итог.
  * Перед первой страницей sessionStorage очищается, если в URL нет offset.
  *
  * Результат: window.__offers + <pre> со строками через «|»
