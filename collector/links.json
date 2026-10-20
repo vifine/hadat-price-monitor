@@ -1,0 +1,2423 @@
+{
+ "generated_on": "2026-10-20",
+ "comment": "Сопоставление карточек площадок с 43 SKU Hadat. match: exact — линейка+тип+объём подтверждены; probable — есть допущение (см. note). Площадка zya (Золотое Яблоко) не сопоставлена: сайт отдаёт «страница не найдена» на все URL (вероятно, антибот).",
+ "links": [
+  {
+   "sku": "202403",
+   "source_id": "wb",
+   "external_id": "264319474",
+   "url": "https://www.wildberries.ru/catalog/264319474/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat экспресс маска для волос смягчающая c микрокапсулами [карточка: 280 мл; MICROCAPSULE HAIR MASK Смягчающая для маска микрокапсулами]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112558",
+   "source_id": "wb",
+   "external_id": "1474657391",
+   "url": "https://www.wildberries.ru/catalog/1474657391/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Оттеночный фиолетовый шампунь от желтизны волос 250 мл [карточка: 250 мл; Hadat Cosmetics Blonde Code Toning Shampoo Блонд код тюнинг шампунь]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112548",
+   "source_id": "wb",
+   "external_id": "1580472261",
+   "url": "https://www.wildberries.ru/catalog/1580472261/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat маска профессиональная для поврежденных волос, 50 мл [карточка: 50 мл; HYDRO LIQUID SILK TREATMENT Маска для волос Жидкий шелк]",
+   "match": "exact",
+   "note": "нет в наличии; в выдаче показана цена 1074"
+  },
+  {
+   "sku": "112553",
+   "source_id": "wb",
+   "external_id": "1544389736",
+   "url": "https://www.wildberries.ru/catalog/1544389736/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat Шампунь для волос восстанавливающий, 50 мл [карточка: 50 мл; HYDRO INTENSIVE REPAIR SHAMPOO - Восстанавливающий шампунь -]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112550",
+   "source_id": "wb",
+   "external_id": "1580716524",
+   "url": "https://www.wildberries.ru/catalog/1580716524/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для волос профессиональный увлажняющий, 50 мл [карточка: 50 мл; HYDRO NOURISHING MOISTURE SHAMPOO - Увлажняющий шампунь]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112545",
+   "source_id": "wb",
+   "external_id": "1580189401",
+   "url": "https://www.wildberries.ru/catalog/1580189401/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для окрашенных волос профессиональный, 50 мл [карточка: 50 мл; GOLDEN HOUR SHAMPOO - Шампунь Golden Hour 50 мл]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112537",
+   "source_id": "wb",
+   "external_id": "1098044786",
+   "url": "https://www.wildberries.ru/catalog/1098044786/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для волос женский детокс профессиональный, 250 мл [карточка: 250 мл; Hadat Cosmetics Detox Therapy Shampoo Шампунь для глубокого ]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112557",
+   "source_id": "wb",
+   "external_id": "1478847623",
+   "url": "https://www.wildberries.ru/catalog/1478847623/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Оттеночная фиолетовая маска нейтрализатор желтизны для волос [карточка: 250 мл; Blonde Code Color Lock Hair Mask Блонд код маска для защиты ]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202402",
+   "source_id": "wb",
+   "external_id": "1181501016",
+   "url": "https://www.wildberries.ru/catalog/1181501016/detail.aspx",
+   "title_on_site": "Hadat Маска для волос Golden hour [карточка: 280 мл; ]",
+   "match": "exact",
+   "note": "продавец «Hadat Cosmetics» (не Official)"
+  },
+  {
+   "sku": "112500",
+   "source_id": "wb",
+   "external_id": "264060005",
+   "url": "https://www.wildberries.ru/catalog/264060005/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для волос профессиональный увлажняющий HYDRO SHAMPOO [карточка: 800 мл; HADAT COSMETICS Hydro Nourishing Moisture Shampoo / Шампунь ]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112511",
+   "source_id": "wb",
+   "external_id": "264319468",
+   "url": "https://www.wildberries.ru/catalog/264319468/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat маска для волос восстанавливающая профессиональная [карточка: 250 мл; HYDRO DEEP REPAIR HAIR Интенсивно восстанавливающая маска]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112556",
+   "source_id": "wb",
+   "external_id": "1478053678",
+   "url": "https://www.wildberries.ru/catalog/1478053678/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Оттеночный фиолетовый кондиционер от желтизны волос 250 мл [карточка: 250 мл; Blonde Code Toning Conditioner Блонд код тюнинг кондиционер-]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112525",
+   "source_id": "wb",
+   "external_id": "579939643",
+   "url": "https://www.wildberries.ru/catalog/579939643/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для поврежденных волос профессиональный, 250 мл [карточка: 250 мл; Шампунь для поврежденных волос профессиональный]",
+   "match": "probable",
+   "note": "«Шампунь для поврежденных волос» 250 мл без названия линейки; по зачёркнутой цене и описанию — Liquid Silk"
+  },
+  {
+   "sku": "112526",
+   "source_id": "wb",
+   "external_id": "580127577",
+   "url": "https://www.wildberries.ru/catalog/580127577/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для поврежденных волос профессиональный, 800 мл [карточка: 800 мл; Шампунь для поврежденных волос профессиональный]",
+   "match": "probable",
+   "note": "«Шампунь для поврежденных волос» 800 мл без названия линейки; по цене — Liquid Silk"
+  },
+  {
+   "sku": "112540",
+   "source_id": "wb",
+   "external_id": "1117584750",
+   "url": "https://www.wildberries.ru/catalog/1117584750/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Детокс тоник для кожи головы профессиональный, 60 мл [карточка: 60 мл; Hadat Cosmetics Detox Therapy Scalp Tonic Несмываемый детокс]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112528",
+   "source_id": "wb",
+   "external_id": "580015632",
+   "url": "https://www.wildberries.ru/catalog/580015632/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Профессиональный кондиционер для поврежденных волос [карточка: 800 мл; Hadat Cosmetics кондиционер для окрашенных волос Жидкий шелк]",
+   "match": "exact",
+   "note": "на WB назван «для окрашенных волос»"
+  },
+  {
+   "sku": "112516",
+   "source_id": "wb",
+   "external_id": "264323667",
+   "url": "https://www.wildberries.ru/catalog/264323667/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat сыворотка несмываемая для волос MIRACLE HAIR SERUM [карточка: 110 мл; MIRACLE HAIR SERUM сыворотка]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202405",
+   "source_id": "wb",
+   "external_id": "578643402",
+   "url": "https://www.wildberries.ru/catalog/578643402/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для окрашенных волос профессиональный, 250 мл [карточка: 250 мл; GOLDEN HOUR SHAMPOO - Шампунь Golden Hour]",
+   "match": "exact",
+   "note": "в выдаче «для окрашенных волос», полное наименование GOLDEN HOUR SHAMPOO"
+  },
+  {
+   "sku": "202408",
+   "source_id": "wb",
+   "external_id": "579939642",
+   "url": "https://www.wildberries.ru/catalog/579939642/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь с микрокапсулами для пористых и непослушных волос [карточка: 800 мл; ]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112550",
+   "source_id": "wb",
+   "external_id": "1926743859",
+   "url": "https://www.wildberries.ru/catalog/1926743859/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro Nourishing Moisture Shampoo Шампунь 50 [карточка: ; Женский]",
+   "match": "probable",
+   "note": "перепродавец Искра-1; объём «50» только в названии, цена 2973 ₽ ≫ РРЦ 50 мл — проверить объём"
+  },
+  {
+   "sku": "112539",
+   "source_id": "wb",
+   "external_id": "1111120819",
+   "url": "https://www.wildberries.ru/catalog/1111120819/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Детокс пилинг для кожи головы профессиональный, 100 мл [карточка: 100 мл; Hadat Cosmetics Detox Therapy Scalp Peeling Детокс-пилинг дл]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112510",
+   "source_id": "wb",
+   "external_id": "264319469",
+   "url": "https://www.wildberries.ru/catalog/264319469/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat маска для волос восстанавливающая профессиональная [карточка: 500 мл; HYDRO DEEP REPAIR HAIR Интенсивно восстанавливающая маска]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112503",
+   "source_id": "wb",
+   "external_id": "142916164",
+   "url": "https://www.wildberries.ru/catalog/142916164/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat шампунь восстанавливающий INTENSIVE REPAIR SHAMPOO [карточка: 250 мл; ]",
+   "match": "exact",
+   "note": "продавец «HADAT COSMETICS OFFICIAL» (второй кабинет?)"
+  },
+  {
+   "sku": "112553",
+   "source_id": "wb",
+   "external_id": "1926695622",
+   "url": "https://www.wildberries.ru/catalog/1926695622/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro Intensive Repair Shampoo Шампунь 50 мл [карточка: ; Женский]",
+   "match": "probable",
+   "note": "перепродавец Искра-1; «50 мл» в названии, цена 2951 ₽ ≫ РРЦ 940 — проверить объём"
+  },
+  {
+   "sku": "112529",
+   "source_id": "wb",
+   "external_id": "1138285374",
+   "url": "https://www.wildberries.ru/catalog/1138285374/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Масло для волос 60 мл [карточка: 60 мл; HADAT COSMETICS Масло для волос 60 мл]",
+   "match": "probable",
+   "note": "«Масло для волос 60 мл», продавец Dosan 15; единственное масло 60 мл в линейке"
+  },
+  {
+   "sku": "112527",
+   "source_id": "wb",
+   "external_id": "1024491147",
+   "url": "https://www.wildberries.ru/catalog/1024491147/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat бальзам кондиционер для волос Жидкий шелк [карточка: 250 мл; Кондиционер Жидкий Шёлк / Liquid Silk Conditioner]",
+   "match": "exact",
+   "note": "продавец «Hadat Cosmetics» (не Official)"
+  },
+  {
+   "sku": "112544",
+   "source_id": "wb",
+   "external_id": "1915913478",
+   "url": "https://www.wildberries.ru/catalog/1915913478/detail.aspx",
+   "title_on_site": "HADAT COSMETICS DETOX THERAPY SHAMPOO Детокс шампунь для 50 [карточка: ; HADAT COSMETICS DETOX THERAPY SHAMPOO Детокс шампунь для 50]",
+   "match": "probable",
+   "note": "перепродавец Линци Веб; «50» в названии"
+  },
+  {
+   "sku": "112500",
+   "source_id": "wb",
+   "external_id": "624615868",
+   "url": "https://www.wildberries.ru/catalog/624615868/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Увлажняющий шампунь Hydro Nourishing Moisture Shampoo, 800 м… [карточка: 800 мл; HADAT COSMETICS Шампунь увлажняющий Hydro Nourishing Moistur]",
+   "match": "exact",
+   "note": "перепродавец Girlish charms"
+  },
+  {
+   "sku": "202407",
+   "source_id": "wb",
+   "external_id": "579939641",
+   "url": "https://www.wildberries.ru/catalog/579939641/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь с микрокапсулами для пористых и непослушных волос [карточка: 250 мл; Шампунь для пушистых волос / Шампунь с микрокапсулами для пористых]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112503",
+   "source_id": "wb",
+   "external_id": "264060006",
+   "url": "https://www.wildberries.ru/catalog/264060006/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для волос профессиональный восстанавливающий, 250 мл [карточка: 250 мл; HADAT COSMETICS Шампунь восстанавливающий для поврежденных и сухих волос]",
+   "match": "probable",
+   "note": "«профессиональный восстанавливающий» 250 мл без названия линейки — Intensive Repair"
+  },
+  {
+   "sku": "202402",
+   "source_id": "wb",
+   "external_id": "264319473",
+   "url": "https://www.wildberries.ru/catalog/264319473/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat экспресс маска для волос восстанавливающая GOLDEN HOUR [карточка: 280 мл; GOLDEN HOUR HAIR MASK Интенсивная восстанавливающая маска]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "632187",
+   "source_id": "wb",
+   "external_id": "264319472",
+   "url": "https://www.wildberries.ru/catalog/264319472/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat маска профессиональная для поврежденных волос, 300 мл [карточка: 300 мл; HYDRO LIQUID SILK TREATMENT Маска для волос Жидкий шелк]",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "179000",
+   "source_id": "wb",
+   "external_id": "1098996843",
+   "url": "https://www.wildberries.ru/catalog/1098996843/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Детокс скраб очищающий для кожи головы, 150 г [карточка: 150 мл; Hadat Cosmetics Detox Therapy Scalp Scrub Солевой очищающий детокс-скраб]",
+   "match": "exact",
+   "note": "на WB объём указан «150 мл» (это 150 г)"
+  },
+  {
+   "sku": "202401",
+   "source_id": "wb",
+   "external_id": "1105791939",
+   "url": "https://www.wildberries.ru/catalog/1105791939/detail.aspx",
+   "title_on_site": "Medavita/Hadat Cosmetics All-in-One Molecular Hair Cream Крем для вол… [карточка: ; Hadat Cosmetics All-in-One Molecular Hair Cream Крем для волос 200 мл/гр (бренд на WB: Medavita)]",
+   "match": "probable",
+   "note": "карточка бренда Medavita на WB, продавец Good choice; товар Hadat All-in-One Molecular Hair Cream 200"
+  },
+  {
+   "sku": "112544",
+   "source_id": "wb",
+   "external_id": "1923431345",
+   "url": "https://www.wildberries.ru/catalog/1923431345/detail.aspx",
+   "title_on_site": "HADAT COSMETICS DETOX THERAPY SHAMPOO Детокс шампунь для 50 [карточка: ; HADAT COSMETICS DETOX THERAPY SHAMPOO Детокс шампунь для 50]",
+   "match": "probable",
+   "note": "перепродавец Nong Xige; «50» в названии"
+  },
+  {
+   "sku": "112553",
+   "source_id": "ozon",
+   "external_id": "5701229021",
+   "url": "https://www.ozon.ru/product/5701229021/",
+   "title_on_site": "HADAT COSMETICS Hydro Intensive Repair Shampoo / Шампунь восстанавливающий, 50 мл",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112558",
+   "source_id": "ozon",
+   "external_id": "5658281472",
+   "url": "https://www.ozon.ru/product/5658281472/",
+   "title_on_site": "HADAT COSMETICS Blonde Code Toning Shampoo/ Оттеночный фиолетовый шампунь от желтизны волос, 250 мл",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112556",
+   "source_id": "ozon",
+   "external_id": "5670013815",
+   "url": "https://www.ozon.ru/product/5670013815/",
+   "title_on_site": "HADAT COSMETICS Blonde Code Toning CONDITIONER/ Фиолетовый бальзам для волос нейтрализатор желтизны 250 мл",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112516",
+   "source_id": "ozon",
+   "external_id": "5983822712",
+   "url": "https://www.ozon.ru/product/5983822712/",
+   "title_on_site": "HADAT COSMETICS Сыворотка для волос, 110 мл",
+   "match": "probable",
+   "note": "«Сыворотка для волос, 110 мл», продавец DX, цена 330/347 ₽ — подозрительно низкая (подделка/ошибка?)"
+  },
+  {
+   "sku": "112559",
+   "source_id": "ozon",
+   "external_id": "5659753960",
+   "url": "https://www.ozon.ru/product/5659753960/",
+   "title_on_site": "HADAT COSMETICS Blonde Code Toning Shampoo/ Оттеночный фиолетовый шампунь от желтизны волос, 50 мл",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202401",
+   "source_id": "ozon",
+   "external_id": "5115785805",
+   "url": "https://www.ozon.ru/product/5115785805/",
+   "title_on_site": "Крем-спрей для волос Hadat Cosmetics Несмываемый 200мл",
+   "match": "probable",
+   "note": "«Крем-спрей несмываемый 200 мл», продавец М.Косметик — All in One"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "4760956473",
+   "url": "https://www.ozon.ru/product/4760956473/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», продавец Smart Stock"
+  },
+  {
+   "sku": "112516",
+   "source_id": "ozon",
+   "external_id": "5926832082",
+   "url": "https://www.ozon.ru/product/5926832082/",
+   "title_on_site": "HADAT COSMETICS Сыворотка для волос, 110 мл",
+   "match": "probable",
+   "note": "«Сыворотка для волос, 110 мл», продавец ORIGINALS"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027895775",
+   "url": "https://www.ozon.ru/product/6027895775/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027895254",
+   "url": "https://www.ozon.ru/product/6027895254/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027896478",
+   "url": "https://www.ozon.ru/product/6027896478/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027897446",
+   "url": "https://www.ozon.ru/product/6027897446/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027896580",
+   "url": "https://www.ozon.ru/product/6027896580/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027897745",
+   "url": "https://www.ozon.ru/product/6027897745/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027896291",
+   "url": "https://www.ozon.ru/product/6027896291/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027897951",
+   "url": "https://www.ozon.ru/product/6027897951/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027896148",
+   "url": "https://www.ozon.ru/product/6027896148/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027895285",
+   "url": "https://www.ozon.ru/product/6027895285/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027896934",
+   "url": "https://www.ozon.ru/product/6027896934/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027896315",
+   "url": "https://www.ozon.ru/product/6027896315/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027898889",
+   "url": "https://www.ozon.ru/product/6027898889/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "6027895765",
+   "url": "https://www.ozon.ru/product/6027895765/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», кросс-бордер продавец (одна из 14 одинаковых карточек)"
+  },
+  {
+   "sku": "112529",
+   "source_id": "ozon",
+   "external_id": "5926834371",
+   "url": "https://www.ozon.ru/product/5926834371/",
+   "title_on_site": "HADAT COSMETICS Масло для волос, 60 мл",
+   "match": "probable",
+   "note": "«Масло для волос, 60 мл», продавец ORIGINALS"
+  },
+  {
+   "sku": "112500",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vq",
+   "url": "https://www.lamoda.ru/p/mp002xw101vq/",
+   "title_on_site": "Hadat Cosmetics Hydro Nourishing Moisture Shampoo / Шампунь увлажняющий для нормальных и сухих волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112554",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1oegj",
+   "url": "https://www.lamoda.ru/p/mp002xw1oegj/",
+   "title_on_site": "Hadat Cosmetics / Маска для волос (50 мл)",
+   "match": "exact",
+   "note": "в выдаче «Маска для волос» 50 мл; линейка по карточке"
+  },
+  {
+   "sku": "112546",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o9qb",
+   "url": "https://www.lamoda.ru/p/mp002xw1o9qb/",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Shampoo / Шампунь (50 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112516",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101w0",
+   "url": "https://www.lamoda.ru/p/mp002xw101w0/",
+   "title_on_site": "Hadat Cosmetics Hydro Miracle Hair Serum / Сыворотка для волос несмываемая, в формате спрея (110 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112561",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o0vj",
+   "url": "https://www.lamoda.ru/p/mp002xw1o0vj/",
+   "title_on_site": "Hadat Cosmetics Blonde Code Toning Conditioner / Кондиционер для светлых волос в мини-формате (50 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112559",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o0tn",
+   "url": "https://www.lamoda.ru/p/mp002xw1o0tn/",
+   "title_on_site": "Hadat Cosmetics Blonde Code Toning Shampoo / Шампунь для светлых волос в мини-формате (50 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112551",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1oedt",
+   "url": "https://www.lamoda.ru/p/mp002xw1oedt/",
+   "title_on_site": "Hadat Cosmetics / Кондиционер для волос (50 мл)",
+   "match": "exact",
+   "note": "в выдаче «Кондиционер для волос» 50 мл; линейка по карточке"
+  },
+  {
+   "sku": "112544",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1mzcd",
+   "url": "https://www.lamoda.ru/p/mp002xw1mzcd/",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Shampoo / Шампунь-пилинг для глубокого очищения (50 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112525",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00gq8",
+   "url": "https://www.lamoda.ru/p/mp002xu00gq8/",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Shampoo / Шампунь с эффектом жидкого шелка для поврежденных, тусклых и окрашенных волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112557",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o0w2",
+   "url": "https://www.lamoda.ru/p/mp002xw1o0w2/",
+   "title_on_site": "Hadat Cosmetics Blonde Code Color Lock Hair Mask / Маска для светлых волос интенсивная (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112560",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o0w3",
+   "url": "https://www.lamoda.ru/p/mp002xw1o0w3/",
+   "title_on_site": "Hadat Cosmetics Blonde Code Color Lock Hair Mask / Маска для светлых волос интенсивная, в мини-формате (50 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112506",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vw",
+   "url": "https://www.lamoda.ru/p/mp002xw101vw/",
+   "title_on_site": "Hadat Cosmetics Hydro Nutrient Nourishing Conditioner / Кондиционер для волос увлажняющий для всех типов волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202407",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00gqd",
+   "url": "https://www.lamoda.ru/p/mp002xu00gqd/",
+   "title_on_site": "Hadat Cosmetics Microcapsules Shampoo / Шампунь с микрокапсулами для пористых, пушащихся и непослушных волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202403",
+   "source_id": "lamoda",
+   "external_id": "mp002xw18i46",
+   "url": "https://www.lamoda.ru/p/mp002xw18i46/",
+   "title_on_site": "Hadat Cosmetics Softening Microcapsule Hair Mask / Маска для волос смягчающая с микрокапсулами (280 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "632187",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101w2",
+   "url": "https://www.lamoda.ru/p/mp002xw101w2/",
+   "title_on_site": "Hadat Cosmetics Hydro Liquid Silk Treatment / Маска для волос с эффектом жидкого шелка для поврежденных, тусклых и окрашенных волос (300 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112545",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o9l3",
+   "url": "https://www.lamoda.ru/p/mp002xw1o9l3/",
+   "title_on_site": "Hadat Cosmetics Golden Hour Shampoo / Шампунь для светлых волос (50 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112558",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o0th",
+   "url": "https://www.lamoda.ru/p/mp002xw1o0th/",
+   "title_on_site": "Hadat Cosmetics Blonde Code Toning Shampoo / Шампунь для светлых волос с дозатором (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112503",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vz",
+   "url": "https://www.lamoda.ru/p/mp002xw101vz/",
+   "title_on_site": "Hadat Cosmetics Hydro Intensive Repair Shampoo / Шампунь восстанавливающий для сухих, ломких, пористых и поврежденных волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112507",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101w5",
+   "url": "https://www.lamoda.ru/p/mp002xw101w5/",
+   "title_on_site": "Hadat Cosmetics Hydro Nutrient Nourishing Conditioner / Кондиционер для волос увлажняющий для всех типов волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112530",
+   "source_id": "lamoda",
+   "external_id": "mp002xw0y0nl",
+   "url": "https://www.lamoda.ru/p/mp002xw0y0nl/",
+   "title_on_site": "Hadat Cosmetics Hydro Liquid Silk Treatment / Маска для волос с эффектом жидкого шелка для поврежденных, тусклых и окрашенных волос (500 мл)",
+   "match": "exact",
+   "note": "«цена до акции» 6520 ≠ РРЦ 6000"
+  },
+  {
+   "sku": "112550",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1oeav",
+   "url": "https://www.lamoda.ru/p/mp002xw1oeav/",
+   "title_on_site": "Hadat Cosmetics / Шампунь (50 мл)",
+   "match": "exact",
+   "note": "в выдаче «Шампунь» 50 мл; линейка по карточке"
+  },
+  {
+   "sku": "112527",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00go0",
+   "url": "https://www.lamoda.ru/p/mp002xu00go0/",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Conditioner / Кондиционер для волос интенсивно восстанавливающий, для поврежденных, тусклых и пористых волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202401",
+   "source_id": "lamoda",
+   "external_id": "mp002xw18i47",
+   "url": "https://www.lamoda.ru/p/mp002xw18i47/",
+   "title_on_site": "Hadat Cosmetics Molecular Hair Cream All in One / Крем для волос несмываемый, в формате спрея (200 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112539",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m3kd",
+   "url": "https://www.lamoda.ru/p/mp002xw1m3kd/",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Scalp Peeling / Пилинг для кожи головы глубоко очищающий, с детокс-эффектом (100 г)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112511",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vr",
+   "url": "https://www.lamoda.ru/p/mp002xw101vr/",
+   "title_on_site": "Hadat Cosmetics Hydro Deep Repair Hair Treatment / Маска для волос для глубокого восстановления и уплотнения поврежденных волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112556",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1o0vh",
+   "url": "https://www.lamoda.ru/p/mp002xw1o0vh/",
+   "title_on_site": "Hadat Cosmetics Blonde Code Toning Conditioner / Кондиционер для светлых волос с дозатором (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112528",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00goz",
+   "url": "https://www.lamoda.ru/p/mp002xu00goz/",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Conditioner / Кондиционер для волос интенсивно восстанавливающий, для поврежденных, тусклых и пористых волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112553",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1oebc",
+   "url": "https://www.lamoda.ru/p/mp002xw1oebc/",
+   "title_on_site": "Hadat Cosmetics / Шампунь (50 мл)",
+   "match": "exact",
+   "note": "в выдаче «Шампунь» 50 мл; линейка по карточке"
+  },
+  {
+   "sku": "112510",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vu",
+   "url": "https://www.lamoda.ru/p/mp002xw101vu/",
+   "title_on_site": "Hadat Cosmetics Hydro Deep Repair Hair Treatment / Маска для волос для глубокого восстановления и уплотнения повреждённых волос (500 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "179000",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m3k8",
+   "url": "https://www.lamoda.ru/p/mp002xw1m3k8/",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Scalp Scrub / Скраб для кожи головы и волос очищающий с морской солью, для детокс-эффекта (150 г)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202402",
+   "source_id": "lamoda",
+   "external_id": "mp002xw18i49",
+   "url": "https://www.lamoda.ru/p/mp002xw18i49/",
+   "title_on_site": "Hadat Cosmetics Golden Hour Hair Mask / Маска для светлых волос интенсивно восстанавливающая (280 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "150002",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101w4",
+   "url": "https://www.lamoda.ru/p/mp002xw101w4/",
+   "title_on_site": "Hadat Cosmetics Hydro Root Strengthening Shampoo / Шампунь для тонких, ослабленных и склонных к выпадению волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112501",
+   "source_id": "lamoda",
+   "external_id": "mp002xw101w3",
+   "url": "https://www.lamoda.ru/p/mp002xw101w3/",
+   "title_on_site": "Hadat Cosmetics Hydro Nourishing Moisture Shampoo / Шампунь увлажняющий для нормальных и сухих волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112526",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00gq9",
+   "url": "https://www.lamoda.ru/p/mp002xu00gq9/",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Shampoo / Шампунь с эффектом жидкого шелка для поврежденных, тусклых и окрашенных волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112540",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m3xy",
+   "url": "https://www.lamoda.ru/p/mp002xw1m3xy/",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Scalp Tonic / Тоник для кожи головы несмываемый с детокс-эффектом, в формате спрея (60 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112537",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m3k2",
+   "url": "https://www.lamoda.ru/p/mp002xw1m3k2/",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Shampoo / Шампунь-пилинг для глубокого очищения (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202405",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00gnk",
+   "url": "https://www.lamoda.ru/p/mp002xu00gnk/",
+   "title_on_site": "Hadat Cosmetics Golden Hour Shampoo / Шампунь для светлых волос с защитой цвета, для окрашенных и осветленных волос (250 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202406",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00gnv",
+   "url": "https://www.lamoda.ru/p/mp002xu00gnv/",
+   "title_on_site": "Hadat Cosmetics Golden Hour Shampoo / Шампунь для светлых волос с защитой цвета, для окрашенных и осветленных волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112538",
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m3k5",
+   "url": "https://www.lamoda.ru/p/mp002xw1m3k5/",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Shampoo / Шампунь-пилинг для глубокого очищения (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202408",
+   "source_id": "lamoda",
+   "external_id": "mp002xu00gqe",
+   "url": "https://www.lamoda.ru/p/mp002xu00gqe/",
+   "title_on_site": "Hadat Cosmetics Microcapsules Shampoo / Шампунь с микрокапсулами для пористых, пушащихся и непослушных волос (800 мл)",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112506",
+   "source_id": "letu",
+   "external_id": "137000506",
+   "url": "https://www.letu.ru/product/nazvanie-brenda-uvlazhnyayushchii-konditsioner-dlya-volos/137000506",
+   "title_on_site": "Увлажняющий кондиционер для волос",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "112527",
+   "source_id": "letu",
+   "external_id": "177303850",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-konditsioner-zhidkii-shelk-/177303850",
+   "title_on_site": "КОНДИЦИОНЕР \"ЖИДКИЙ ШЕЛК\"",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "112501",
+   "source_id": "letu",
+   "external_id": "137000508",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-uvlazhnyayushchii-shampun/137000508",
+   "title_on_site": "Увлажняющий шампунь",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "112525",
+   "source_id": "letu",
+   "external_id": "177303952",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-liquid-silk-shampoo-shampun-zhidkii-shelk-/177303952",
+   "title_on_site": "LIQUID SILK SHAMPOO / ШАМПУНЬ \"ЖИДКИЙ ШЕЛК\"",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему (зачёркнутая 3474 = РРЦ 250)"
+  },
+  {
+   "sku": "202407",
+   "source_id": "letu",
+   "external_id": "177303852",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-microcapsules-shampoo-shampun-microcapsules-/177303852",
+   "title_on_site": "MICROCAPSULES SHAMPOO / ШАМПУНЬ \"MICROCAPSULES\"",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "112530",
+   "source_id": "letu",
+   "external_id": "180200051",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-maska-dlya-volos-zhidkii-shyolk/180200051",
+   "title_on_site": "Маска для волос Жидкий шёлк",
+   "match": "probable",
+   "note": "«Маска Жидкий шёлк», 1 вариант; зачёркнутая 6000 = РРЦ 500 мл"
+  },
+  {
+   "sku": "632187",
+   "source_id": "letu",
+   "external_id": "137100335",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-maska-zhidkii-shelk/137100335",
+   "title_on_site": "Маска жидкий шелк",
+   "match": "probable",
+   "note": "«Маска жидкий шелк», 1 вариант; цена 4569 = РРЦ 300 мл"
+  },
+  {
+   "sku": "112516",
+   "source_id": "letu",
+   "external_id": "137000510",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nesmyvaemaya-syvorotka/137000510",
+   "title_on_site": "Несмываемая сыворотка",
+   "match": "probable",
+   "note": "«Несмываемая сыворотка» = Miracle Hair Serum 110 мл (цена = РРЦ)"
+  },
+  {
+   "sku": "112503",
+   "source_id": "letu",
+   "external_id": "137000507",
+   "url": "https://www.letu.ru/product/nazvanie-brenda-vosstanavlivayushchii-shampun/137000507",
+   "title_on_site": "Восстанавливающий шампунь",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "112529",
+   "source_id": "letu",
+   "external_id": "177303950",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-liquid-silk-oil-maslo-zhidkii-shelk-/177303950",
+   "title_on_site": "LIQUID SILK OIL / МАСЛО \"ЖИДКИЙ ШЕЛК\"",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202405",
+   "source_id": "letu",
+   "external_id": "177303979",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-shampun-golden-hour-/177303979",
+   "title_on_site": "ШАМПУНЬ \"GOLDEN HOUR\"",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "202402",
+   "source_id": "letu",
+   "external_id": "155400405",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-golden-hour-hair-mask-maska-dlya-volos-golden-hour-/155400405",
+   "title_on_site": "Маска для волос \"Golden hour\"",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112540",
+   "source_id": "letu",
+   "external_id": "187700290",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-detoks-terapi-tonik-dlya-kozhi-golovy/187700290",
+   "title_on_site": "Детокс терапи тоник для кожи головы",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202401",
+   "source_id": "letu",
+   "external_id": "155400404",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-molecular-hair-cream-all-in-one-molekulyarnyi-krem-dlya-volos-all-in-one-/155400404",
+   "title_on_site": "MOLECULAR HAIR CREAM \"ALL IN ONE\"/ Молекулярный крем для волос \" All in one\"",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202403",
+   "source_id": "letu",
+   "external_id": "155400406",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-softening-microcapsule-hair-mask-smyagchayushchaya-maska-dlya-volos/155400406",
+   "title_on_site": "SOFTENING MICROCAPSULE HAIR MASK/ Смягчающая маска для волос",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "179000",
+   "source_id": "letu",
+   "external_id": "187900063",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-detoks-skrab-dlya-kozhi-golovy-detox-therapy-scalp-scrub/187900063",
+   "title_on_site": "Детокс скраб для кожи головы DETOX THERAPY SCALP SCRUB",
+   "match": "probable",
+   "note": "объём не указан; цена 3000 ≈ РРЦ 150 г (3056)"
+  },
+  {
+   "sku": "112511",
+   "source_id": "letu",
+   "external_id": "137000504",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-intensivno-vosstanavlivayushchaya-maska/137000504",
+   "title_on_site": "Интенсивно восстанавливающая маска",
+   "match": "probable",
+   "note": "в плитке 2 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему"
+  },
+  {
+   "sku": "112556",
+   "source_id": "letu",
+   "external_id": "190000604",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-blonde-code-toning-conditioner-blond-kod-toning-konditsioner/190000604",
+   "title_on_site": "Blonde Code Toning Conditioner Блонд код тонинг кондиционер",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112558",
+   "source_id": "letu",
+   "external_id": "190000606",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-blonde-code-toning-shampoo-blond-kod-toning-shampun/190000606",
+   "title_on_site": "Blonde Code Toning Shampoo Блонд код тонинг шампунь",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112557",
+   "source_id": "letu",
+   "external_id": "190000607",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-blonde-code-color-lock-hair-mask-blond-kod-maska-dlya-zashchity-tsveta/190000607",
+   "title_on_site": "Blonde Code Color Lock Hair Mask Блонд код маска для защиты цвета",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112544",
+   "source_id": "letu",
+   "external_id": "187700279",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-detoks-terapi-shampun/187700279",
+   "title_on_site": "Детокс терапи шампунь",
+   "match": "probable",
+   "note": "в плитке 3 варианта объёма; цена плитки совпадает с РРЦ этого объёма — привязано к нему (цена 980 ≈ РРЦ 50 мл)"
+  },
+  {
+   "sku": "112554",
+   "source_id": "letu",
+   "external_id": "190200097",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hydro-deep-repair-hair-maska-glubokoe-vosstanovlenie/190200097",
+   "title_on_site": "HYDRO DEEP REPAIR HAIR - Маска глубокое восстановление",
+   "match": "probable",
+   "note": "мини-формат (название в стиле мини, как на Lamoda), нет в наличии"
+  },
+  {
+   "sku": "112551",
+   "source_id": "letu",
+   "external_id": "190100527",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hydro-nutrient-nourishing-conditioner-ultrauvlazhnyayushchii-konditsioner/190100527",
+   "title_on_site": "HYDRO NUTRIENT NOURISHING CONDITIONER - Ультраувлажняющий кондиционер",
+   "match": "probable",
+   "note": "мини-формат, нет в наличии"
+  },
+  {
+   "sku": "112550",
+   "source_id": "letu",
+   "external_id": "190000609",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hydro-nourishing-moisture-shampoo-uvlazhnyayushchii-shampun/190000609",
+   "title_on_site": "HYDRO NOURISHING MOISTURE SHAMPOO - Увлажняющий шампунь",
+   "match": "probable",
+   "note": "мини-формат, нет в наличии"
+  },
+  {
+   "sku": "112546",
+   "source_id": "letu",
+   "external_id": "190000616",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-liquid-silk-shampoo-shampun-zhidkii-shelk/190000616",
+   "title_on_site": "LIQUID SILK SHAMPOO - Шампунь жидкий шелк",
+   "match": "probable",
+   "note": "мини-формат, нет в наличии"
+  },
+  {
+   "sku": "112539",
+   "source_id": "letu",
+   "external_id": "190000642",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-detoks-terapi-piling-dlya-kozhi-golovy/190000642",
+   "title_on_site": "Детокс терапи пилинг для кожи головы",
+   "match": "probable",
+   "note": "вторая карточка детокс-пилинга, нет в наличии — объём не указан"
+  },
+  {
+   "sku": "112545",
+   "source_id": "letu",
+   "external_id": "190000631",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-golden-hour-shampoo-shampun-golden-hour/190000631",
+   "title_on_site": "GOLDEN HOUR SHAMPOO - Шампунь Golden Hour",
+   "match": "probable",
+   "note": "мини-формат, нет в наличии"
+  },
+  {
+   "sku": "112559",
+   "source_id": "letu",
+   "external_id": "190000629",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-blonde-code-toning-shampoo-blond-kod-toning-shampun/190000629",
+   "title_on_site": "Blonde Code Toning Shampoo Блонд код тонинг шампунь",
+   "match": "probable",
+   "note": "вторая карточка Blonde Code Toning Shampoo, нет в наличии — вероятно 50 мл"
+  },
+  {
+   "sku": "112553",
+   "source_id": "letu",
+   "external_id": "190000632",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hydro-intensive-repair-shampoo-vosstanavlivayushchii-shampun/190000632",
+   "title_on_site": "HYDRO INTENSIVE REPAIR SHAMPOO - Восстанавливающий шампунь",
+   "match": "probable",
+   "note": "мини-формат, нет в наличии"
+  },
+  {
+   "sku": "112544",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-detox-therapy-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-detox-therapy-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Shampoo",
+   "match": "exact",
+   "note": "только в магазинах (онлайн не купить)"
+  },
+  {
+   "sku": "179000",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-detox-therapy-scalp-scrub-150",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-detox-therapy-scalp-scrub-150",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Scalp Scrub",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112550",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-nourishing-moisture-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-nourishing-moisture-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Hydro Nourishing Moisture Shampoo",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112516",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-miracle-hair-serum",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-miracle-hair-serum",
+   "title_on_site": "Hadat Cosmetics Hydro Miracle Hair Serum",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112530",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-liquid-silk-treatment-500",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-liquid-silk-treatment-500",
+   "title_on_site": "Hadat Cosmetics Hydro Liquid Silk Treatment",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112551",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-nutrient-nourishing-conditioner-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-nutrient-nourishing-conditioner-50",
+   "title_on_site": "Hadat Cosmetics Hydro Nutrient Nourishing Conditioner",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112553",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-intensive-repair-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-intensive-repair-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Hydro Intensive Repair Shampoo",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202401",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-all-in-one-molecular-hair-cream",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-all-in-one-molecular-hair-cream",
+   "title_on_site": "Hadat Cosmetics All-in-One Molecular Hair Cream",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112529",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-liquid-silk-oil",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-liquid-silk-oil",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Oil",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202402",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-golden-hour-hair-mask",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-golden-hour-hair-mask",
+   "title_on_site": "Hadat Cosmetics Golden Hour Hair Mask",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "202403",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-softening-microcapsules-hair-mask",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-softening-microcapsules-hair-mask",
+   "title_on_site": "Hadat Cosmetics Softening Microcapsules Hair Mask",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112545",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-golden-hour-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-golden-hour-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Golden Hour Shampoo",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112546",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-liquid-silk-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-liquid-silk-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Shampoo",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112540",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-detox-therapy-scalp-60",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-detox-therapy-scalp-60",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Scalp",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112559",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-blonde-code-toning-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-blonde-code-toning-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Blonde Code Toning Shampoo",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112561",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-blonde-code-toning-conditioner-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-blonde-code-toning-conditioner-50",
+   "title_on_site": "Hadat Cosmetics Blonde Code Toning Conditioner",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112548",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-liquid-silk-treatment-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-liquid-silk-treatment-50",
+   "title_on_site": "Hadat Cosmetics Hydro Liquid Silk Treatment",
+   "match": "exact",
+   "note": "только в магазинах (онлайн не купить)"
+  },
+  {
+   "sku": "112539",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-detox-therapy-scalp-peeling-100",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-detox-therapy-scalp-peeling-100",
+   "title_on_site": "Hadat Cosmetics Detox Therapy Scalp Peeling",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112560",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-blonde-code-color-lock-hair-mask-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-blonde-code-color-lock-hair-mask-50",
+   "title_on_site": "Hadat Cosmetics Blonde Code Color Lock Hair Mask",
+   "match": "exact",
+   "note": ""
+  },
+  {
+   "sku": "112554",
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-deep-repair-hair-treatment-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-deep-repair-hair-treatment-50",
+   "title_on_site": "Hadat Cosmetics Hydro Deep Repair Hair Treatment",
+   "match": "exact",
+   "note": ""
+  }
+ ],
+ "unmatched": [
+  {
+   "source_id": "wb",
+   "external_id": "264349056",
+   "url": "https://www.wildberries.ru/catalog/264349056/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор косметики для волос восстанавливающий",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "319590298",
+   "url": "https://www.wildberries.ru/catalog/319590298/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор для роста волос шампунь маска Root Revival…",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "335918240",
+   "url": "https://www.wildberries.ru/catalog/335918240/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Лосьон для тела увлажняющий парфюмированный",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "493160689",
+   "url": "https://www.wildberries.ru/catalog/493160689/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Крем для рук для сухой и поврежденной кожи, 50 мл",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1212806803",
+   "url": "https://www.wildberries.ru/catalog/1212806803/detail.aspx",
+   "title_on_site": "Hadat Крем для рук Calm",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "529012773",
+   "url": "https://www.wildberries.ru/catalog/529012773/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Крем уход для волос восстанавливающий одна минутка [карточка: 500 мл; HYDRO RECOVERY CREAM ONE MINUTE REPAIR Крем для волос 1 мину]",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Recovery Cream One Minute Repair 500 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "264349053",
+   "url": "https://www.wildberries.ru/catalog/264349053/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор косметики для волос увлажняющий",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "264060007",
+   "url": "https://www.wildberries.ru/catalog/264060007/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь для волос профессиональный восстанавливающий, 800 мл [карточка: 800 мл; HADAT COSMETICS Шампунь восстанавливающий для поврежденных и]",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Intensive Repair Shampoo 800 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "493160690",
+   "url": "https://www.wildberries.ru/catalog/493160690/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Крем для рук питательный, для сухой и поврежденной кожи",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "284318409",
+   "url": "https://www.wildberries.ru/catalog/284318409/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор для волос увлажняющий шампунь бальзам",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "284318411",
+   "url": "https://www.wildberries.ru/catalog/284318411/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор для роста волос шампунь маска",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "264349054",
+   "url": "https://www.wildberries.ru/catalog/264349054/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор косметики для волос восстанавливающий",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "264349055",
+   "url": "https://www.wildberries.ru/catalog/264349055/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор косметики для волос укрепляющий",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "335918242",
+   "url": "https://www.wildberries.ru/catalog/335918242/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Крем для рук Calm питательный, успокаивающий, 50 мл",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "480688382",
+   "url": "https://www.wildberries.ru/catalog/480688382/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь пилинг профессиональный для жирных волос, 300 мл",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (шампунь-пилинг 300 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "319587482",
+   "url": "https://www.wildberries.ru/catalog/319587482/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор для волос шампунь маска",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1015568817",
+   "url": "https://www.wildberries.ru/catalog/1015568817/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор крем для рук 50 мл + лосьон для тела 300 мл",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "480692733",
+   "url": "https://www.wildberries.ru/catalog/480692733/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Восстанавливающая сыворотка для волос с перламутром, 120 мл [карточка: 120 мл; Восстанавливающая сыворотка для волос с перламутром, 120 мл]",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Restoring Pearl Hair Serum 120 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "624447882",
+   "url": "https://www.wildberries.ru/catalog/624447882/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Укрепляющий шампунь для роста волос [карточка: 250 мл; Укрепляющий шампунь для роста волос HADAT COSMETICS]",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Root Strengthening Shampoo 250 мл, в 43 только 800 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1181579133",
+   "url": "https://www.wildberries.ru/catalog/1181579133/detail.aspx",
+   "title_on_site": "Hadat Шампунь для волос Жидкий шелк [карточка: 800 мл; Hadat шампунь для роста волос 250 мл]",
+   "reason": "противоречие: в выдаче «Шампунь Жидкий шелк», в карточке объём 800 мл и «шампунь для роста 250 мл» — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1915466199",
+   "url": "https://www.wildberries.ru/catalog/1915466199/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro SPA hair treatment Маска для волос 50 [карточка: ; HADAT COSMETICS Hydro SPA hair treatment Маска для волос 50]",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1915466070",
+   "url": "https://www.wildberries.ru/catalog/1915466070/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro SPA hair treatment Маска для волос 50 [карточка: ; HADAT COSMETICS Hydro SPA hair treatment Маска для волос 50]",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1926745437",
+   "url": "https://www.wildberries.ru/catalog/1926745437/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro Root Strengthening Shampoo Шампунь для [карточка: ; HADAT COSMETICS Hydro Root Strengthening Shampoo Шампунь для]",
+   "reason": "Hydro Root Strengthening Shampoo, объём не указан ни в выдаче, ни в карточке — нужно решение (цена 3526 — похоже на 250 мл, которого нет в 43)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "807782141",
+   "url": "https://www.wildberries.ru/catalog/807782141/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Подарочный набор для волос шампунь маска",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1918677214",
+   "url": "https://www.wildberries.ru/catalog/1918677214/detail.aspx",
+   "title_on_site": "HADAT COSMETICS DETOX THERAPY SHAMPOO Детокс шампунь для [карточка: ; HADAT COSMETICS DETOX THERAPY SHAMPOO Детокс шампунь для (объём не указан)]",
+   "reason": "Detox Therapy Shampoo, объём не указан ни в выдаче, ни в карточке — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1923474325",
+   "url": "https://www.wildberries.ru/catalog/1923474325/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro Nutrient Nourishing Conditioner [карточка: ; HADAT COSMETICS Hydro Nutrient Nourishing Conditioner (объём не указан)]",
+   "reason": "Hydro Nutrient Nourishing Conditioner, объём не указан ни в выдаче, ни в карточке — нужно решение (цена 4178 — похоже на 250 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1879731141",
+   "url": "https://www.wildberries.ru/catalog/1879731141/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь женский 250 мл масло [карточка: ; Шампунь женский 250 мл масло]",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1632566964",
+   "url": "https://www.wildberries.ru/catalog/1632566964/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Бальзам для волос женский [карточка: ; Бальзам для волос женский]",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1935552460",
+   "url": "https://www.wildberries.ru/catalog/1935552460/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь женский 250 мл масло",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1935548980",
+   "url": "https://www.wildberries.ru/catalog/1935548980/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь женский 250 мл масло",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1935552968",
+   "url": "https://www.wildberries.ru/catalog/1935552968/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Шампунь женский 250 мл масло",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1926703463",
+   "url": "https://www.wildberries.ru/catalog/1926703463/detail.aspx",
+   "title_on_site": "HADAT COSMETICS LIQUID SILK SHAMPOO Шампунь для поврежденных [карточка: ; HADAT COSMETICS LIQUID SILK SHAMPOO Шампунь для поврежденных (объём не указан)]",
+   "reason": "Liquid Silk Shampoo, объём не указан ни в выдаче, ни в карточке — нужно решение (цена 3548 — похоже на 250 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "264319470",
+   "url": "https://www.wildberries.ru/catalog/264319470/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat маска для волос увлажняющая профессиональная [карточка: 250 мл; HYDRO SPA HAIR TREATMENT Гидро СПА маска увлажняющая]",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "264319471",
+   "url": "https://www.wildberries.ru/catalog/264319471/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Hadat маска для волос увлажняющая профессиональная [карточка: 500 мл; HYDRO SPA HAIR TREATMENT Гидро СПА маска увлажняющая]",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1927448648",
+   "url": "https://www.wildberries.ru/catalog/1927448648/detail.aspx",
+   "title_on_site": "HADAT COSMETICS MICROCAPSULES SHAMPOO Шампунь с для и волос [карточка: ; HADAT COSMETICS MICROCAPSULES SHAMPOO (объём не указан)]",
+   "reason": "Microcapsules Shampoo, объём не указан ни в выдаче, ни в карточке — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "480695359",
+   "url": "https://www.wildberries.ru/catalog/480695359/detail.aspx",
+   "title_on_site": "Hadat/Скраб для волос и кожи головы с морской солью, 300 мл",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (скраб с морской солью 300 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1905020738",
+   "url": "https://www.wildberries.ru/catalog/1905020738/detail.aspx",
+   "title_on_site": "HADAT COSMETICS MICROCAPSULES SHAMPOO Шампунь с [карточка: ; HADAT COSMETICS MICROCAPSULES SHAMPOO (объём не указан)]",
+   "reason": "Microcapsules Shampoo, объём не указан ни в выдаче, ни в карточке — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1809146487",
+   "url": "https://www.wildberries.ru/catalog/1809146487/detail.aspx",
+   "title_on_site": "Шампунь для волос HADAT COSMETICS, 250 мл [карточка: ; Шампунь для волос HADAT COSMETICS, 250 мл]",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1921639932",
+   "url": "https://www.wildberries.ru/catalog/1921639932/detail.aspx",
+   "title_on_site": "HADAT COSMETICS MICROCAPSULES SHAMPOO Шампунь с [карточка: 50 мл; HADAT COSMETICS MICROCAPSULES SHAMPOO 50 мл]",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Microcapsules Shampoo 50 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1923987921",
+   "url": "https://www.wildberries.ru/catalog/1923987921/detail.aspx",
+   "title_on_site": "HADAT COSMETICS MICROCAPSULES SHAMPOO Шампунь с [карточка: 50 мл; HADAT COSMETICS MICROCAPSULES SHAMPOO 50 мл]",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Microcapsules Shampoo 50 мл)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "481181082",
+   "url": "https://www.wildberries.ru/catalog/481181082/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Набор для увлажняющего ухода за волосами",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1292953349",
+   "url": "https://www.wildberries.ru/catalog/1292953349/detail.aspx",
+   "title_on_site": "HADAT COSMETICS Hydro Nutrient Nourishing Conditioner Конд [карточка: ; HADAT COSMETICS Hydro Nutrient Nourishing Conditioner (объём не указан)]",
+   "reason": "Hydro Nutrient Nourishing Conditioner, объём не указан ни в выдаче, ни в карточке — нужно решение (цена 17720 — аномально высокая)"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1105636827",
+   "url": "https://www.wildberries.ru/catalog/1105636827/detail.aspx",
+   "title_on_site": "Medavita/Hadat Cosmetics Calm Hand Cream Крем для рук 50 мл гр",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1925235101",
+   "url": "https://www.wildberries.ru/catalog/1925235101/detail.aspx",
+   "title_on_site": "Маска для волос HADAT COSMETICS, 300 мл [карточка: ; Маска для волос HADAT COSMETICS, 300 мл]",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "wb",
+   "external_id": "1728467954",
+   "url": "https://www.wildberries.ru/catalog/1728467954/detail.aspx",
+   "title_on_site": "HADAT COSMETICS/Бальзам для волос женский растительный",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "5059494385",
+   "url": "https://www.ozon.ru/product/5059494385/",
+   "title_on_site": "Маска для волос Hadat Cosmetics Увлажняющая 250мл",
+   "reason": "«Маска увлажняющая 250 мл» (М.Косметик) — вероятно Hydro SPA, Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "5691637882",
+   "url": "https://www.ozon.ru/product/5691637882/",
+   "title_on_site": "HADAT COSMETICS Hydro SPA hair treatment / Маска для волос увлажняющая гидро спа, 50 мл",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "6027728781",
+   "url": "https://www.ozon.ru/product/6027728781/",
+   "title_on_site": "HADAT COSMETICS Шампунь для волос, 250 мл",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение («Шампунь для волос, 250 мл», кросс-бордер)"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "5939446712",
+   "url": "https://www.ozon.ru/product/5939446712/",
+   "title_on_site": "HADAT COSMETICS Сыворотка для волос, 120 мл",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (сыворотка 120 мл — Restoring Pearl), цена 18512"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "3949025176",
+   "url": "https://www.ozon.ru/product/3949025176/",
+   "title_on_site": "HADAT COSMETICS Шампунь для волос, 800 мл",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение («Шампунь для волос, 800 мл», кросс-бордер, зачёркнутая 65605)"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "4080265908",
+   "url": "https://www.ozon.ru/product/4080265908/",
+   "title_on_site": "HADAT COSMETICS Шампунь для волос, 800 мл",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение («Шампунь для волос, 800 мл», кросс-бордер)"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "4253614797",
+   "url": "https://www.ozon.ru/product/4253614797/",
+   "title_on_site": "HADAT COSMETICS Маска для волос, 250 мл",
+   "reason": "обезличенное название (линейка не определяется) — нужно решение («Маска для волос, 250 мл», кросс-бордер)"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "5334581648",
+   "url": "https://www.ozon.ru/product/5334581648/",
+   "title_on_site": "HADAT COSMETICS Сыворотка для волос, 120 мл",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (сыворотка 120 мл — Restoring Pearl)"
+  },
+  {
+   "source_id": "ozon",
+   "external_id": "5926832506",
+   "url": "https://www.ozon.ru/product/5926832506/",
+   "title_on_site": "HADAT COSMETICS Спрей для ухода за волосами, 110 мл",
+   "reason": "товар Hadat, но такого SKU нет среди 43 («Спрей для ухода за волосами, 110 мл» — вероятно Texturizing Salt Spray)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1odg7",
+   "url": "https://www.lamoda.ru/p/mp002xw1odg7/",
+   "title_on_site": "Hadat Cosmetics / Шампунь MICROCAPSULES (50 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Microcapsules Shampoo 50 мл)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1oeb6",
+   "url": "https://www.lamoda.ru/p/mp002xw1oeb6/",
+   "title_on_site": "Hadat Cosmetics / Шампунь (50 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Root Strengthening Shampoo 50 мл, по карточке)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1oggr",
+   "url": "https://www.lamoda.ru/p/mp002xw1oggr/",
+   "title_on_site": "Hadat Cosmetics / Праймер для волос (130 г)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (праймер 130 г)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "rtlafj035001",
+   "url": "https://www.lamoda.ru/p/rtlafj035001/",
+   "title_on_site": "Weekend Max Mara",
+   "reason": "чужой бренд (Weekend Max Mara) в поиске"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0xs9w",
+   "url": "https://www.lamoda.ru/p/mp002xw0xs9w/",
+   "title_on_site": "Hadat Cosmetics Hydro-Silk Ritual Set / Набор для ухода за волосами подарочный, мини-форматы (2x70 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vs",
+   "url": "https://www.lamoda.ru/p/mp002xw101vs/",
+   "title_on_site": "Hadat Cosmetics Hydro Spa Hair Treatmen / Маска для волос с тройным действием для глубокого увлажнения, укрепления и защиты (250 мл)",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0xvd9",
+   "url": "https://www.lamoda.ru/p/mp002xw0xvd9/",
+   "title_on_site": "Hadat Cosmetics Root Revival System Set / Набор для ухода за волосами подарочный, мини-форматы (2x70 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vx",
+   "url": "https://www.lamoda.ru/p/mp002xw101vx/",
+   "title_on_site": "Hadat Cosmetics Hydro Root Strengthening Shampoo / Шампунь для тонких, ослабленных и склонных к выпадению волос (250 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Root Strengthening Shampoo 250 мл)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw18i48",
+   "url": "https://www.lamoda.ru/p/mp002xw18i48/",
+   "title_on_site": "Hadat Cosmetics Restoring Pearl Hair Serum / Сыворотка для волос восстанавливающая с перламутром (120 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Restoring Pearl Hair Serum 120 мл)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xu093nk",
+   "url": "https://www.lamoda.ru/p/mp002xu093nk/",
+   "title_on_site": "Hadat Cosmetics Aya Hand Cream / Крем для рук для сухой и поврежденной кожи (50 мл)",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vn",
+   "url": "https://www.lamoda.ru/p/mp002xw101vn/",
+   "title_on_site": "Hadat Cosmetics Hydro Intensive Repair Shampoo / Шампунь восстанавливающий для сухих, ломких, пористых и поврежденных волос (800 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Intensive Repair Shampoo 800 мл)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xu08wzn",
+   "url": "https://www.lamoda.ru/p/mp002xu08wzn/",
+   "title_on_site": "Hadat Cosmetics Calm Shower Gel / Гель для душа с цитрусовым ароматом (300 мл)",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vy",
+   "url": "https://www.lamoda.ru/p/mp002xw101vy/",
+   "title_on_site": "Hadat Cosmetics Hydro Spa Hair Treatmen / Маска для волос с тройным действием для глубокого увлажнения, укрепления и защиты (500 мл)",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1fflv",
+   "url": "https://www.lamoda.ru/p/mp002xw1fflv/",
+   "title_on_site": "Hadat Cosmetics Calm Body Lotion / Лосьон для тела увлажняющий, с ароматом ландыша и туберозы (300 мл)",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw101w1",
+   "url": "https://www.lamoda.ru/p/mp002xw101w1/",
+   "title_on_site": "Hadat Cosmetics Hydro Texturizing Salt Spray / Спрей для укладки солевой, текстурирующий (110 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Texturizing Salt Spray 110 мл)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m0w3",
+   "url": "https://www.lamoda.ru/p/mp002xw1m0w3/",
+   "title_on_site": "Hadat Cosmetics СПА Сет / Набор для ухода за волосами подарочный, восстанавливающий спа-ритуал",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xu097bi",
+   "url": "https://www.lamoda.ru/p/mp002xu097bi/",
+   "title_on_site": "Hadat Cosmetics Balmy Hand Cream / Крем для рук питательный, для сухой и поврежденной кожи (50 мл)",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0p89l",
+   "url": "https://www.lamoda.ru/p/mp002xw0p89l/",
+   "title_on_site": "Hadat Cosmetics Hydro Silk Hair Set / Набор для ухода за волосами в косметичке, мини-форматы (3x70 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0p89g",
+   "url": "https://www.lamoda.ru/p/mp002xw0p89g/",
+   "title_on_site": "Hadat Cosmetics Hydro Nourishing Set / Набор для ухода за волосами в косметичке, мини-форматы (3x70 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1fflm",
+   "url": "https://www.lamoda.ru/p/mp002xw1fflm/",
+   "title_on_site": "Hadat Cosmetics Calm Body Cream / Крем для тела питательный, со свежим цитрусовым ароматом (250 мл)",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0xvci",
+   "url": "https://www.lamoda.ru/p/mp002xw0xvci/",
+   "title_on_site": "Hadat Cosmetics Touch Reset Set / Набор для ухода за руками подарочный, для сухой и поврежденной кожи (2x50 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0p89i",
+   "url": "https://www.lamoda.ru/p/mp002xw0p89i/",
+   "title_on_site": "Hadat Cosmetics Hydro Repair Hair Set / Набор для ухода за волосами в косметичке, мини-форматы (3x70 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m0w6",
+   "url": "https://www.lamoda.ru/p/mp002xw1m0w6/",
+   "title_on_site": "Hadat Cosmetics Стайлинг Сет / Набор для ухода за волосами подарочный, для подготовки к укладке",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw101vv",
+   "url": "https://www.lamoda.ru/p/mp002xw101vv/",
+   "title_on_site": "Hadat Cosmetics Hair & Scalp Mud Scrab / Скраб для кожи головы очищающий с морской солью (300 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hair & Scalp Mud Scrab 300 мл)"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1laac",
+   "url": "https://www.lamoda.ru/p/mp002xw1laac/",
+   "title_on_site": "Hadat Cosmetics Inner Silk Set / Набор для ухода за волосами подарочный",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1laas",
+   "url": "https://www.lamoda.ru/p/mp002xw1laas/",
+   "title_on_site": "Hadat Cosmetics Moisture Touch Set / Набор для ухода за волосами подарочный (2x250 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1laaw",
+   "url": "https://www.lamoda.ru/p/mp002xw1laaw/",
+   "title_on_site": "Hadat Cosmetics Repair Pause Set / Набор для ухода за волосами подарочный (2x250 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1m0w0",
+   "url": "https://www.lamoda.ru/p/mp002xw1m0w0/",
+   "title_on_site": "Hadat Cosmetics Calm Уход для Тела и Рук / Набор для ухода за руками и телом подарочный, для мягкого увлажнения",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw0p89k",
+   "url": "https://www.lamoda.ru/p/mp002xw0p89k/",
+   "title_on_site": "Hadat Cosmetics Hydro Hair Growth Set / Набор для ухода за волосами в косметичке, мини-форматы (3x70 мл)",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "lamoda",
+   "external_id": "mp002xw1mc16",
+   "url": "https://www.lamoda.ru/p/mp002xw1mc16/",
+   "title_on_site": "Hadat Cosmetics Hydro Recovery Cream One Minute Repair / Крем для волос интенсивно восстанавливающий, с дозатором (500 мл)",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Recovery Cream One Minute Repair 500 мл)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000307",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-daily-balance/180000307",
+   "title_on_site": "Набор Daily Balance",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180200027",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-krem-dlya-volos-odna-minuta-na-vosstanovlenie-/180200027",
+   "title_on_site": "Крем для волос \"Одна Минута на восстановление\"",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (крем «Одна минута на восстановление»)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "137000505",
+   "url": "https://www.letu.ru/product/nazvanie-brenda-shampun-dlya-rosta-volos/137000505",
+   "title_on_site": "Шампунь для роста волос",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Root Strengthening Shampoo, 2 объёма; цена 3729 = 250 мл)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "137000511",
+   "url": "https://www.letu.ru/product/nazvanie-brenda-gidro-spa-maska/137000511",
+   "title_on_site": "Гидро Спа маска",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000315",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-po-uhodu-za-volosami-hydro-silk-ritual/180000315",
+   "title_on_site": "Набор по уходу за волосами Hydro-Silk Ritual",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000314",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-po-uhodu-za-volosami-hydro-therapy-duo/180000314",
+   "title_on_site": "Набор по уходу за волосами Hydro - Therapy Duo",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000312",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-po-uhodu-za-volosami-root-revival-system/180000312",
+   "title_on_site": "Набор по уходу за волосами Root Revival System",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000311",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-po-uhodu-za-volosami-repair-pause/180000311",
+   "title_on_site": "Набор по уходу за волосами Repair Pause",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "145400361",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-uvlazhnyayushchii-nabor/145400361",
+   "title_on_site": "Увлажняющий набор",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000313",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-po-uhodu-za-volosami-inner-silk/180000313",
+   "title_on_site": "Набор по уходу за волосами Inner Silk",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "185800490",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-dlya-uhodu-za-telom-calm-ochishchenie-i-uvlazhnenie-/185800490",
+   "title_on_site": "Набор для уходу за телом \"CALM Очищение и увлажнение\"",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190100438",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-set-balance-and-nourish-ritual-nabor-ritual-balans-i-uvlazhnenie/190100438",
+   "title_on_site": "SET \"BALANCE AND NOURISH RITUAL\" - Набор «РИТУАЛ БАЛАНС И УВЛАЖНЕНИЕ»",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190100434",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-set-detox-therapy-ritual-nabor-ritual-detoks-terapiya/190100434",
+   "title_on_site": "SET \"DETOX THERAPY RITUAL\" - Набор «РИТУАЛ ДЕТОКС-ТЕРАПИЯ»",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190100440",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-set-golden-hour-ritual-nabor-ritual-zolotoe-siyanie/190100440",
+   "title_on_site": "SET \"GOLDEN HOUR RITUAL\" - Набор «РИТУАЛ ЗОЛОТОЕ СИЯНИЕ»",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190001221",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-set-deep-repair-ritual-nabor-ritual-glubokoe-vosstanovlenie/190001221",
+   "title_on_site": "SET \"DEEP REPAIR RITUAL\" - Набор «РИТУАЛ ГЛУБОКОЕ ВОССТАНОВЛЕНИЕ»",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "166501099",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-krem-dlya-tela-calm/166501099",
+   "title_on_site": "Крем для тела CALM",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180200065",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-gel-dlya-dusha-calm/180200065",
+   "title_on_site": "Гель для душа CALM",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180200064",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-aya-hand-cream-krem-dlya-ruk-aya-/180200064",
+   "title_on_site": "КРЕМ ДЛЯ РУК \"AYA\" / AYA HAND CREAM",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "148000488",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-shelk-dlya-volos/148000488",
+   "title_on_site": "Набор Шелк для волос",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "145400359",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-dlya-rosta/145400359",
+   "title_on_site": "Набор для роста",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "164300086",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-loson-dlya-tela-calm/164300086",
+   "title_on_site": "Лосьон для тела CALM",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "141201352",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-vosstanavlivayushchii-nabor/141201352",
+   "title_on_site": "Восстанавливающий набор",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "155400407",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-restoring-pearl-hair-serum-vosstanavlivayushchaya-syvorotka-s-perlamutrom/155400407",
+   "title_on_site": "RESTORING PEARL HAIR SERUM/ Восстанавливающая сыворотка с перламутром",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "140900171",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-skrab-dlya-volos-i-kozhi-golovy/140900171",
+   "title_on_site": "Скраб для волос и кожи головы",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (скраб для волос и кожи головы 300 мл)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180000309",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-po-uhodu-za-volosami-moisture-touch/180000309",
+   "title_on_site": "Набор по уходу за волосами Moisture Touch",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "144200403",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-gluboko-ochishchayushchii-shampun/144200403",
+   "title_on_site": "Глубоко очищающий шампунь",
+   "reason": "«Глубоко очищающий шампунь» 4890 — вероятно шампунь-пилинг 300 мл, товар Hadat, но такого SKU нет среди 43"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180200063",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-balmy-hand-cream-krem-dlya-ruk-balmy-/180200063",
+   "title_on_site": "BALMY HAND CREAM / КРЕМ ДЛЯ РУК \"BALMY\"",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "180200029",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-nabor-dlya-uhodu-za-rukami-touch-reset/180200029",
+   "title_on_site": "Набор для уходу за руками Touch Reset",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "164900065",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-calm-hand-cream-krem-dlya-ruk-calm/164900065",
+   "title_on_site": "CALM HAND CREAM / Крем для рук CALM",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "137000509",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-solevoi-sprei-dlya-volos/137000509",
+   "title_on_site": "Солевой спрей для волос",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (солевой спрей)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190100526",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hair-discipline-style-primer-5-in-1-mnogofunktsionalnyi-praimer-dlya-volos-5-v-1-/190100526",
+   "title_on_site": "\"HAIR DISCIPLINE STYLE PRIMER 5 -IN- 1 МНОГОФУНКЦИОНАЛЬНЫЙ ПРАЙМЕР ДЛЯ ВОЛОС 5-В-1\"",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (праймер 5-в-1)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190200088",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-set-microcapsules-care-ritual-nabor-ritual-mikrokapsulnyi-uhod/190200088",
+   "title_on_site": "SET \"MICROCAPSULES CARE RITUAL\" - Набор «РИТУАЛ МИКРОКАПСУЛЬНЫЙ УХОД»",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190300133",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-set-hydro-silk-ritual-nabor-ritual-zhidkii-shyolk/190300133",
+   "title_on_site": "SET \"HYDRO SILK RITUAL\" - Набор «РИТУАЛ ЖИДКИЙ ШЁЛК»",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190100435",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hydro-spa-hair-treatment-maska-gidro-spa/190100435",
+   "title_on_site": "HYDRO SPA HAIR TREATMENT - Маска гидро спа",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190100436",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-liquid-silk-conditioner-konditsioner-zhidkii-shelk/190100436",
+   "title_on_site": "LIQUID SILK CONDITIONER - Кондиционер жидкий шелк",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Liquid Silk Conditioner 50 мл)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190000630",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-microcapsules-shampoo-microcapsules-care/190000630",
+   "title_on_site": "MICROCAPSULES SHAMPOO - microcapsules care",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Microcapsules Shampoo 50 мл)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "190000614",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-hydro-root-strengthening-shampoo-shampun-dlya-rosta/190000614",
+   "title_on_site": "HYDRO ROOT STRENGTHENING SHAMPOO - Шампунь для роста",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Root Strengthening Shampoo 50 мл)"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "186300387",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-calm-uhod-dlya-tela-i-ruk/186300387",
+   "title_on_site": "CALM Уход для тела и рук",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "186300250",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-calm-uvlazhnenie-i-komfort/186300250",
+   "title_on_site": "CALM Увлажнение и комфорт",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "159000213",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-uvlazhnyayushchii-shampun/159000213",
+   "title_on_site": "Увлажняющий шампунь",
+   "reason": "«Увлажняющий шампунь», старая карточка без цены и объёма — нужно решение"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "185800485",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-spa-ritual-vosstanovleniya-dlya-volos/185800485",
+   "title_on_site": "Спа-ритуал восстановления для волос",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "letu",
+   "external_id": "185800487",
+   "url": "https://www.letu.ru/product/hadat-cosmetics-ritual-dlya-podgotovki-k-ukladke-i-myagkosti-volos/185800487",
+   "title_on_site": "Ритуал для подготовки к укладке и мягкости волос",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-root-strengthening-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-root-strengthening-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Hydro Root Strengthening Shampoo",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Hydro Root Strengthening Shampoo 50 мл)"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-daily-balance-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-daily-balance-set",
+   "title_on_site": "Hadat Cosmetics Daily Balance Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-moisture-touch-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-moisture-touch-set",
+   "title_on_site": "Hadat Cosmetics Moisture Touch Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-spa-set-spa-ritual-vosstanovleniya-dlya-volos",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-spa-set-spa-ritual-vosstanovleniya-dlya-volos",
+   "title_on_site": "Hadat Cosmetics Спа сет Спа-ритуал восстановления для волос",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-root-revival-system-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-root-revival-system-set",
+   "title_on_site": "Hadat Cosmetics Root Revival System Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-silk-ritual-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-silk-ritual-set",
+   "title_on_site": "Hadat Cosmetics Hydro-Silk Ritual Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-inner-silk-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-inner-silk-set",
+   "title_on_site": "Hadat Cosmetics Inner Silk Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-repair-pause-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-repair-pause-set",
+   "title_on_site": "Hadat Cosmetics Repair Pause Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-therapy-duo-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-therapy-duo-set",
+   "title_on_site": "Hadat Cosmetics Hydro-Therapy Duo Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-microcapsules-shampoo-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-microcapsules-shampoo-50",
+   "title_on_site": "Hadat Cosmetics Microcapsules Shampoo",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Microcapsules Shampoo 50 мл)"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-nourishing-moisture-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-nourishing-moisture-set",
+   "title_on_site": "Hadat Cosmetics Hydro Nourishing Moisture Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-liquid-silk-conditioner-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-liquid-silk-conditioner-50",
+   "title_on_site": "Hadat Cosmetics Liquid Silk Conditioner",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Liquid Silk Conditioner 50 мл)"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-restoring-pearl-hair-serum",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-restoring-pearl-hair-serum",
+   "title_on_site": "Hadat Cosmetics Restoring Pearl Hair Serum",
+   "reason": "товар Hadat, но такого SKU нет среди 43 (Restoring Pearl Hair Serum)"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-spa-hair-treatment-50",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-spa-hair-treatment-50",
+   "title_on_site": "Hadat Cosmetics Hydro SPA Hair Treatment",
+   "reason": "Hydro SPA Hair Treatment — отдельная линейка (на Lamoda своя РРЦ 3660/6113), нет среди 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-hair-growth-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-hair-growth-set",
+   "title_on_site": "Hadat Cosmetics Hydro Hair Growth Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-calm-ochischenie-i-uvlazhnenie",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-calm-ochischenie-i-uvlazhnenie",
+   "title_on_site": "Hadat Cosmetics Calm Очищение и увлажнение",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-stayling-set-ritual-dlya-podgotovki-k-ukladke-i-myagkosti-volos",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-stayling-set-ritual-dlya-podgotovki-k-ukladke-i-myagkosti-volos",
+   "title_on_site": "Hadat Cosmetics Стайлинг Сет Ритуал для подготовки к укладке и мягкости волос",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-calm-body-lotion",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-calm-body-lotion",
+   "title_on_site": "Hadat Cosmetics Calm Body Lotion",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-calm-shower-gel",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-calm-shower-gel",
+   "title_on_site": "Hadat Cosmetics Calm Shower Gel",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-balmy-hand-cream",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-balmy-hand-cream",
+   "title_on_site": "Hadat Cosmetics Balmy Hand Cream",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-intensive-repair-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-intensive-repair-set",
+   "title_on_site": "Hadat Cosmetics Hydro Intensive Repair Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-calm-hand-cream",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-calm-hand-cream",
+   "title_on_site": "Hadat Cosmetics Calm Hand Cream",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-aya-hand-cream",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-aya-hand-cream",
+   "title_on_site": "Hadat Cosmetics Aya Hand Cream",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-calm-body-cream-250",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-calm-body-cream-250",
+   "title_on_site": "Hadat Cosmetics Calm Body Cream",
+   "reason": "уход за телом/руками — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-touch-reset-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-touch-reset-set",
+   "title_on_site": "Hadat Cosmetics Touch Reset Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-calm-ukhod-dlya-tela-i-ruk",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-calm-ukhod-dlya-tela-i-ruk",
+   "title_on_site": "Hadat Cosmetics Calm Уход для тела и рук",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-advent-calendar",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-advent-calendar",
+   "title_on_site": "Hadat Cosmetics Advent Calendar",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-golden-hour-ritual--set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-golden-hour-ritual--set",
+   "title_on_site": "Hadat Cosmetics Golden Hour Ritual Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-microcapsules-care-ritual-set",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-microcapsules-care-ritual-set",
+   "title_on_site": "Hadat Cosmetics Microcapsules Care Ritual Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  },
+  {
+   "source_id": "rivegauche",
+   "external_id": "hadat-cosmetics-hydro-silk-ritual-set-1",
+   "url": "https://rivegauche.ru/product/hadat-cosmetics-hydro-silk-ritual-set-1",
+   "title_on_site": "Hadat Cosmetics Hydro Silk Ritual Set",
+   "reason": "набор/сет — не входит в 43 SKU"
+  }
+ ]
+}
