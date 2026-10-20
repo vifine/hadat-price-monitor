@@ -12,15 +12,23 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--page);color:var(--text);font-size:12px}
-.wrap{padding:16px 20px;max-width:100%}
-h1{font-size:16px;font-weight:600;margin:0 0 2px}
-.sub{color:var(--text2);font-size:10px;margin-bottom:12px}
-.demo{display:inline-block;background:#fff3cd;color:#7a5b00;border-radius:4px;padding:1px 6px;margin-left:6px;font-size:10px}
+.topbar{height:56px;background:#1d1d1b;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 24px}
+.brand{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600}
+.brand svg{width:24px;height:24px}
+.upd{font-size:12px;color:#bcaa98}
+.wrap{padding:20px 48px 44px;max-width:100%}
+.footer{position:fixed;left:0;right:0;bottom:0;height:28px;background:var(--page);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:10px;color:#6c757d;z-index:20}
+.footer .lg{display:flex;align-items:center;gap:10px;font-size:12px}
+.footer .lg .bar2{width:240px;height:8px;border-radius:2px}
+.footer .demo{font-size:9px;color:#6b6b6b}
+.sico{position:absolute;left:10px;top:8px;width:12px;height:12px;pointer-events:none;color:var(--text2)}
+.chev{width:8px;height:8px;margin-left:2px}
+.hd{font-size:8px;font-weight:600;color:var(--text);letter-spacing:.04em;text-align:left;padding-left:12px}
 
 /* filter bar */
 .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
 .cluster{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.search{height:28px;width:260px;border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:0 10px;font:inherit;font-size:12px}
+.search{height:28px;width:260px;border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:0 10px 0 28px;font:inherit;font-size:12px}
 .search:focus{outline:none;border-color:var(--text)}
 .btn{height:28px;padding:0 10px;border:1px solid var(--line);background:var(--white);border-radius:var(--radius);font:inherit;font-size:12px;font-weight:500;cursor:pointer;color:var(--text);display:inline-flex;align-items:center;gap:4px}
 .btn:hover{border-color:var(--text2)}
@@ -42,7 +50,7 @@ h1{font-size:16px;font-weight:600;margin:0 0 2px}
 .range input{height:28px;border:1px solid var(--line);border-radius:var(--radius);padding:0 6px;font:inherit;font-size:11px;background:var(--white)}
 
 /* table */
-.scroll{overflow:auto;max-height:calc(100vh - 150px)}
+.scroll{overflow:auto;max-height:calc(100vh - 56px - 20px - 28px - 44px - 28px - 16px)}
 table{border-collapse:separate;border-spacing:0;table-layout:fixed;background:none}
 th,td{padding:0;height:29px;font-weight:400}
 thead th{position:sticky;top:0;z-index:5;background:var(--page);height:36px;vertical-align:bottom;padding-bottom:4px}
@@ -77,13 +85,15 @@ td.cell.eq{background:#fff;color:var(--text)}
 </style>
 </head>
 <body>
+<div class="topbar">
+  <div class="brand"><svg viewBox="0 0 24 24" fill="none"><path d="M5.6884 7.18164H3.80496V9.78559H5.6884V7.18164Z" fill="#fff"/><path d="M0 0V24H24V0H0ZM21.9331 21.9397H2.06694V2.06723H21.9331V21.9362V21.9397Z" fill="#fff"/><path d="M5.6884 13.0198H10.7051V17.3585H12.592V8.8195H15.5107V17.3585H17.3941V8.8195H20.3128V7.18164H12.592H10.7051V11.3819H5.6884V11.3715H3.80496V17.3585H5.6884V13.0198Z" fill="#fff"/></svg>Мониторинг цен</div>
+  <div class="upd" id="upd"></div>
+</div>
 <div class="wrap">
-  <h1>Мониторинг цен <span class="demo" id="demoTag">демо-данные</span></h1>
-  <div class="sub">Только собственные товары Hadat на маркетплейсах — цена относительно РРЦ</div>
 
   <div class="bar">
     <div class="cluster">
-      <input id="q" class="search" placeholder="Поиск по названию или SKU" autocomplete="off">
+      <span style="position:relative;display:inline-block"><svg class="sico" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="5" cy="5" r="3.6"/><path d="M8 8l3 3"/></svg><input id="q" class="search" placeholder="Поиск по названию или SKU" autocomplete="off"></span>
       <div class="dd" id="ddSrc"><button class="btn" type="button" id="btnSrc">Источники</button><div class="menu" id="menuSrc"></div></div>
       <div class="dd" id="ddFlt"><button class="btn" type="button" id="btnFlt">Фильтры</button>
         <div class="menu">
@@ -104,8 +114,8 @@ td.cell.eq{background:#fff;color:var(--text)}
   </div>
 
   <div class="scroll" id="scroll"><table id="tbl"></table></div>
-  <div class="legend"><span>ниже РРЦ</span><div class="bar2" id="lg"></div><span>выше РРЦ</span><span>· белая ячейка = цена равна РРЦ · серая = нет цены · зачёркнуто = базовая цена до скидки</span></div>
 </div>
+<div class="footer"><span>Hadat Cosmetics · 2026</span><div class="lg"><span>Мин.</span><div class="bar2" id="lg"></div><span>Макс. за период</span></div><span class="demo" id="demoTag">Демо-цены · не из источника</span></div>
 <div id="tip"></div>
 
 <script>
@@ -154,6 +164,7 @@ const fmtDate=s=>s.slice(8,10)+'.'+s.slice(5,7);
 const pct=(a,b)=>((a/b-1)*100);
 const sgn=v=>(v>0?'+':'')+v.toFixed(1).replace('.',',')+'%';
 
+const CH='<svg class="chev" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 2.5l3 3 3-3"/></svg>';
 const S={data:null,q:'',src:new Set(),flt:{disc:false,nop:false,above:false},period:'1',from:null,to:null,sort:null,onlyAlerts:false};
 const PERIODS=[['1','Сегодня'],['7','7 дней'],['14','14 дней'],['30','30 дней'],['90','90 дней'],['custom','Custom range']];
 
@@ -198,7 +209,7 @@ function render(){
   const arr=(k)=>S.sort&&JSON.stringify(S.sort.key)===JSON.stringify(k)?`<span class="arr">${S.sort.dir>0?'▲':'▼'}</span>`:'';
   let h='<thead><tr><th class="c-prod"></th><th class="c-rrp"></th>';
   chans.forEach(ch=>{h+=`<th class="ch" colspan="${idx.length}">${ch.name}</th>`;});
-  h+='</tr><tr class="dates"><th class="c-prod"></th><th class="c-rrp rrph" data-sort="rrp">РРЦ, ₽'+arr('rrp')+'</th>';
+  h+='</tr><tr class="dates"><th class="c-prod hd">ТОВАР</th><th class="c-rrp rrph" data-sort="rrp">РРЦ, ₽'+arr('rrp')+'</th>';
   chans.forEach(ch=>idx.forEach((i,j)=>{h+=`<th class="dt${j===0?' first':''}" data-ch="${ch.id}" data-i="${i}">${fmtDate(D.dates[i])}${arr({ch:ch.id,i})}</th>`;}));
   h+='</tr></thead><tbody>';
   if(!rows.length)h+=`<tr><td colspan="${2+chans.length*idx.length}" class="empty">Ничего не найдено</td></tr>`;
@@ -218,9 +229,9 @@ function render(){
   $('#cnt').textContent=`${rows.length} из ${D.items.length}`;
   const dirty=S.q||S.flt.disc||S.flt.nop||S.flt.above||S.onlyAlerts||S.src.size!==D.channels.length;
   $('#reset').hidden=!dirty;
-  $('#btnSrc').textContent='Источники · '+S.src.size;
+  $('#btnSrc').innerHTML='Источники · '+S.src.size+CH;
   const nf=Object.values(S.flt).filter(Boolean).length;
-  $('#btnFlt').textContent='Фильтры'+(nf?' · '+nf:'');
+  $('#btnFlt').innerHTML='Фильтры'+(nf?' · '+nf:'')+CH;
   $('#btnFlt').classList.toggle('on',nf>0);
   const ac=alertCount(); const ab=$('#alerts'); ab.textContent='Алерты · '+ac; ab.classList.toggle('on',S.onlyAlerts);
   $('#lg').style.background='linear-gradient(90deg,'+STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')+')';
@@ -229,6 +240,7 @@ function render(){
 function init(D){
   S.data=D; D.channels.forEach(c=>S.src.add(c.id));
   $('#demoTag').hidden=!D.demo;
+  {const d=new Date();$('#upd').textContent='Обновлено '+d.toLocaleDateString('ru-RU')+', '+d.toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit'});}
   $('#seg').innerHTML=PERIODS.map(([k,l])=>`<button data-p="${k}" class="${k===S.period?'active':''}">${l}</button>`).join('');
   $('#menuSrc').innerHTML='<div class="hint">Минимум один источник</div>'+D.channels.map(c=>`<label><input type="checkbox" data-src="${c.id}" checked> ${c.name==='ЗЯ'?'Золотое Яблоко':c.name==='WB'?'Wildberries':c.name}</label>`).join('');
   $('#d1').min=$('#d2').min=D.dates[0]; $('#d1').max=$('#d2').max=D.dates[D.dates.length-1];
