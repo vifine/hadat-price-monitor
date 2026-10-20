@@ -103,6 +103,7 @@ body.resizing{cursor:col-resize;user-select:none}
 .dt.first,.rrph.first{border-left:1px solid var(--sep)}
 td.cell{width:36px;min-width:36px;text-align:left;vertical-align:top;padding:2px 0 0 3px;font-size:9px;line-height:1.1;position:relative;cursor:default;overflow:hidden;white-space:nowrap}
 td.cell{border-left:1px solid #fff}
+td.cell.gend,th.gend{border-right:1px solid var(--sep)} /* правая граница последнего канала */
 td.cell.gstart{border-left:1px solid var(--sep)}
 td.cell s{display:block;font-size:7px;opacity:.75}
 td.cell.none{background:var(--nodata);color:var(--text2)}
@@ -417,17 +418,17 @@ function render(){
 
   const arr=(k)=>S.sort&&JSON.stringify(S.sort.key)===JSON.stringify(k)?`<span class="arr">${S.sort.dir>0?'▲':'▼'}</span>`:'';
   let h='<thead><tr><th class="c-prod"></th><th class="c-rrp"></th>';
-  chans.forEach(ch=>{h+=`<th class="ch" colspan="${idx.length}">${ch.name}</th>`;});
+  chans.forEach((ch,ci)=>{h+=`<th class="ch${ci===chans.length-1?' gend':''}" colspan="${idx.length}">${ch.name}</th>`;});
   h+='</tr><tr class="dates"><th class="c-prod hd">ТОВАР<span class="colrs" title="Потяните, чтобы изменить ширину. Двойной клик — по умолчанию"></span></th><th class="c-rrp rrph" data-sort="rrp">РРЦ, ₽'+arr('rrp')+'</th>';
-  chans.forEach(ch=>idx.forEach((i,j)=>{h+=`<th class="dt${j===0?' first':''}" data-ch="${ch.id}" data-i="${i}">${fmtDate(D.dates[i])}${arr({ch:ch.id,i})}</th>`;}));
+  chans.forEach((ch,ci)=>idx.forEach((i,j)=>{h+=`<th class="dt${j===0?' first':''}${ci===chans.length-1&&j===idx.length-1?' gend':''}" data-ch="${ch.id}" data-i="${i}">${fmtDate(D.dates[i])}${arr({ch:ch.id,i})}</th>`;}));
   h+='</tr></thead><tbody>';
   if(!rows.length)h+=`<tr><td colspan="${2+chans.length*idx.length}" class="empty">Ничего не найдено</td></tr>`;
   const onK=FLT.map(f=>f[0]).filter(k=>S.flt[k]), Lv=idx[idx.length-1];
   rows.forEach(it=>{
     const hue=[...it.title.split(' ')[0]].reduce((a,c)=>a+c.charCodeAt(0),0)*37%360;
     h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"><img src="swatches/${it.sku}.webp" width="24" height="24" alt="" loading="lazy" onerror="this.remove()"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${it.rrp==null?'—':fmt(it.rrp)}</td>`;
-    chans.forEach(ch=>idx.forEach((i,j)=>{
-      const c=cellAt(it,ch.id,i), g=(j===0?' gstart':'')+(onK.length?(i===Lv&&onK.some(k=>cellHas(k,it,ch.id,i))?' hit':' dim'):'');
+    chans.forEach((ch,ci)=>idx.forEach((i,j)=>{
+      const c=cellAt(it,ch.id,i), g=(j===0?' gstart':'')+(ci===chans.length-1&&j===idx.length-1?' gend':'')+(onK.length?(i===Lv&&onK.some(k=>cellHas(k,it,ch.id,i))?' hit':' dim'):'');
       const at=`data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}"`;
       if(!c){h+=`<td class="cell none${g}" ${at}>—</td>`;return;}
       if(c.oos){h+=`<td class="cell oos${g}" ${at}>нет</td>`;return;}
