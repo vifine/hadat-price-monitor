@@ -80,15 +80,20 @@ th,td{padding:0;height:29px;font-weight:400}
 thead th{position:sticky;top:calc(56px + var(--barh,60px));z-index:5;background:var(--page);height:18px;line-height:18px;vertical-align:middle;padding-bottom:0}
 thead tr.dates th{top:calc(56px + var(--barh,60px) + var(--r1h,36px))}
 td{border-bottom:1px solid var(--page)}
-.c-prod{position:sticky;left:0;z-index:4;width:280px;min-width:280px;background:var(--white);text-align:left}
-.c-rrp{position:sticky;left:280px;z-index:4;width:56px;min-width:56px;background:var(--white);text-align:right;font-size:9px;padding-right:6px}
+.c-prod{position:sticky;left:0;z-index:4;width:var(--pw,280px);min-width:var(--pw,280px);max-width:var(--pw,280px);background:var(--white);text-align:left}
+.c-rrp{position:sticky;left:var(--pw,280px);z-index:4;width:56px;min-width:56px;background:var(--white);text-align:right;font-size:9px;padding-right:6px}
 td.c-rrp{vertical-align:top;padding-top:2px;line-height:1.1}
 thead .c-prod,thead .c-rrp{z-index:7;background:var(--page)}
+thead .c-prod{z-index:8}
 .prod{display:flex;align-items:center;gap:8px;padding:2px 8px 2px 4px;height:29px}
 .sw{width:24px;height:24px;flex:none;overflow:hidden}
 .sw img{display:block;width:24px;height:24px;object-fit:cover}
 .pt{min-width:0;line-height:1.15}
-.pt b{display:block;font-weight:500;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:228px}
+.pt b{display:block;font-weight:500;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:calc(var(--pw,280px) - 52px)}
+.colrs{position:absolute;top:0;right:-3px;width:7px;height:100%;cursor:col-resize;z-index:8}
+.colrs::after{content:"";position:absolute;left:3px;top:3px;bottom:3px;width:1px;background:var(--text2);opacity:.35}
+.colrs:hover::after,body.resizing .colrs::after{opacity:1;background:var(--text)}
+body.resizing{cursor:col-resize;user-select:none}
 .pt i{font-style:normal;font-size:8px;color:var(--text2)}
 .ch{font-size:9px;font-weight:500;text-align:left;padding-left:4px;border-left:1px solid var(--sep)}
 .dt{font-size:8px;color:var(--text2);text-align:center;cursor:pointer;user-select:none;white-space:nowrap}
@@ -346,7 +351,7 @@ function render(){
   const arr=(k)=>S.sort&&JSON.stringify(S.sort.key)===JSON.stringify(k)?`<span class="arr">${S.sort.dir>0?'▲':'▼'}</span>`:'';
   let h='<thead><tr><th class="c-prod"></th><th class="c-rrp"></th>';
   chans.forEach(ch=>{h+=`<th class="ch" colspan="${idx.length}">${ch.name}</th>`;});
-  h+='</tr><tr class="dates"><th class="c-prod hd">ТОВАР</th><th class="c-rrp rrph" data-sort="rrp">РРЦ, ₽'+arr('rrp')+'</th>';
+  h+='</tr><tr class="dates"><th class="c-prod hd">ТОВАР<span class="colrs" title="Потяните, чтобы изменить ширину. Двойной клик — по умолчанию"></span></th><th class="c-rrp rrph" data-sort="rrp">РРЦ, ₽'+arr('rrp')+'</th>';
   chans.forEach(ch=>idx.forEach((i,j)=>{h+=`<th class="dt${j===0?' first':''}" data-ch="${ch.id}" data-i="${i}">${fmtDate(D.dates[i])}${arr({ch:ch.id,i})}</th>`;}));
   h+='</tr></thead><tbody>';
   if(!rows.length)h+=`<tr><td colspan="${2+chans.length*idx.length}" class="empty">Ничего не найдено</td></tr>`;
@@ -416,7 +421,9 @@ function renderKpis(idx,chans){
     card(null,'Цена изменилась',`↑ ${cur.up} · ↓ ${cur.down}`,'',`<div class="d">${L>0?'к '+fmtDate(D.dates[L-1]):'&nbsp;'}</div>`);
 }
 
-let D,bound=false;
+let D,bound=false,PW=280;
+function setPW(w){PW=Math.round(Math.min(640,Math.max(160,w)));document.documentElement.style.setProperty('--pw',PW+'px');}
+try{const v=+localStorage.getItem('hpm.pw');if(v)setPW(v);}catch(_){}
 function layout(){
   const f=document.querySelector('.footer');
   const b=document.querySelector('#mon .bar'); if(!b||b.offsetParent===null){f.style.width='';return;}
@@ -476,6 +483,17 @@ function init(data){
     const same=S.sort&&JSON.stringify(S.sort.key)===JSON.stringify(key);
     S.sort=same?(S.sort.dir>0?{key,dir:-1}:null):{key,dir:1}; render();
   });
+  // ширина колонки товаров: перетаскивание за правый край заголовка «ТОВАР»
+  $('#tbl').addEventListener('mousedown',e=>{
+    if(!e.target.classList.contains('colrs'))return; e.preventDefault();
+    const x0=e.clientX, w0=document.querySelector('#tbl th.c-prod').offsetWidth;
+    document.body.classList.add('resizing');
+    const mv=ev=>setPW(w0+ev.clientX-x0);
+    const up=()=>{document.body.classList.remove('resizing');removeEventListener('mousemove',mv);removeEventListener('mouseup',up);
+      try{localStorage.setItem('hpm.pw',PW)}catch(_){} };
+    addEventListener('mousemove',mv); addEventListener('mouseup',up);
+  });
+  $('#tbl').addEventListener('dblclick',e=>{if(e.target.classList.contains('colrs')){setPW(280);try{localStorage.removeItem('hpm.pw')}catch(_){}}});
   // увеличенная картинка товара при наведении на свотч
   const pimg=$('#pimg'), pim=pimg.querySelector('img');
   $('#tbl').addEventListener('mousemove',e=>{
