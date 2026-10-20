@@ -79,6 +79,11 @@ a.brand{color:#fff;text-decoration:none;cursor:pointer}
 table{border-collapse:separate;border-spacing:0;table-layout:fixed;background:none}
 th,td{padding:0;height:29px;font-weight:400}
 th.dt{width:36px;min-width:36px}
+/* шапка таблицы: каналы и даты чуть темнее фона, белые разделители дней, снизу чёрная черта */
+thead th.ch,thead th.dt{background:#e9e9e4}
+thead th.dt{border-left:1px solid #fff}
+thead th.dt.first,thead th.ch{border-left:1px solid var(--sep)}
+thead tr.dates th{border-bottom:1px solid var(--sep)}
 thead th{position:sticky;top:calc(56px + var(--barh,60px));z-index:5;background:var(--page);height:18px;line-height:18px;vertical-align:middle;padding-bottom:0}
 thead tr.dates th{top:calc(56px + var(--barh,60px) + var(--r1h,36px))}
 td{border-bottom:1px solid var(--page)}
@@ -93,8 +98,8 @@ thead .c-prod{z-index:8}
 .pt{min-width:0;line-height:1.15}
 .pt b{display:block;font-weight:500;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:calc(var(--pw,280px) - 52px)}
 .colrs{position:absolute;top:0;right:-3px;width:7px;height:100%;cursor:col-resize;z-index:8}
-.colrs::after{content:"";position:absolute;left:3px;top:0;bottom:0;width:1px;background:var(--sep)}
-.colrs:hover::after,body.resizing .colrs::after{width:2px;left:2px;background:var(--text)}
+.colrs::after{content:"";position:absolute;left:3px;top:50%;height:12px;margin-top:-6px;width:1px;background:var(--text2);opacity:.6;border-radius:1px;transition:all .12s}
+.colrs:hover::after,body.resizing .colrs::after{top:2px;height:auto;bottom:2px;margin-top:0;width:2px;left:2px;opacity:1;background:var(--text)}
 body.resizing{cursor:col-resize;user-select:none}
 .pt i{font-style:normal;font-size:8px;color:var(--text2)}
 .ch{font-size:9px;font-weight:500;text-align:left;padding-left:4px;border-left:1px solid var(--sep)}
