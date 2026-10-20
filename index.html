@@ -112,13 +112,16 @@ td.cell.eq{background:#fff;color:var(--text)}
 td.cell.oos{background:repeating-linear-gradient(135deg,var(--nodata) 0 4px,#f3f3f1 4px 8px);color:var(--text2);font-size:8px}
 td.cell.multi::after{content:"";position:absolute;right:2px;top:2px;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55}
 td.cell.est{font-style:italic}
-td.cell.dim::before{content:"";position:absolute;inset:0;background:rgba(246,246,244,.78);pointer-events:none} /* приглушение поверх ячейки, разделитель-рамка не бледнеет */
+/* приглушение: меняем только заливку и цвет текста ячейки — разделители каналов остаются тёмными */
+td.cell{background:var(--bg)}
+td.cell.dim{background:linear-gradient(rgba(246,246,244,.8),rgba(246,246,244,.8)),var(--bg,var(--nodata))!important;color:rgba(31,31,31,.3)!important}
+td.cell.eq.dim{--bg:#fff}
 td.cell.hit{box-shadow:inset 0 0 0 1px rgba(29,29,27,.55)}
 /* подсветка строки при наведении */
 #tbl tbody tr:hover td.c-prod,#tbl tbody tr:hover td.c-rrp{background:#e9e9e4}
 #tbl tbody tr:hover td.cell{box-shadow:inset 0 1px 0 #1d1d1b,inset 0 -1px 0 #1d1d1b}
 #tbl tbody tr:hover td.cell.hit{box-shadow:inset 0 1px 0 #1d1d1b,inset 0 -1px 0 #1d1d1b,inset 0 0 0 1px rgba(29,29,27,.55)}
-#tbl tbody tr:hover td.cell.dim::before{background:rgba(246,246,244,.55)}
+#tbl tbody tr:hover td.cell.dim{background:linear-gradient(rgba(246,246,244,.55),rgba(246,246,244,.55)),var(--bg,var(--nodata))!important;color:rgba(31,31,31,.6)!important}
 #tbl tbody tr:hover td.c-prod{box-shadow:inset 3px 0 0 #1d1d1b}
 
 /* сводка */
@@ -431,7 +434,7 @@ function render(){
       const ex=(c.n>1?' multi':'')+(c.est?' est':'');
       if(c.p===it.rrp&&!c.base){h+=`<td class="cell eq${g}${ex}" ${at}>${fmt(c.p)}</td>`;return;}
       const col=scale((c.p/it.rrp-mn)/span), fg=lum(col)<0.5?'#fff':'#1f1f1f';
-      h+=`<td class="cell${g}${ex}" style="background:rgb(${col});color:${fg}" ${at}>${fmt(c.p)}${c.base?`<s>${fmt(c.base)}</s>`:''}</td>`;
+      h+=`<td class="cell${g}${ex}" style="--bg:rgb(${col});color:${fg}" ${at}>${fmt(c.p)}${c.base?`<s>${fmt(c.base)}</s>`:''}</td>`;
     }));
     h+='</tr>';
   });
