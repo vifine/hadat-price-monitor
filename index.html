@@ -100,6 +100,23 @@ td.cell.none{background:var(--nodata);color:var(--text2)}
 td.cell.eq{background:#fff;color:var(--text)}
 .rrph{cursor:pointer;font-size:8px;color:var(--text2);text-align:right;padding-right:6px}
 .empty{padding:40px;text-align:center;color:var(--text2)}
+td.cell.oos{background:repeating-linear-gradient(135deg,var(--nodata) 0 4px,#f3f3f1 4px 8px);color:var(--text2);font-size:8px}
+td.cell.multi::after{content:"";position:absolute;right:2px;top:2px;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55}
+td.cell.est{font-style:italic}
+
+/* сводка */
+.kpis{position:sticky;left:48px;z-index:3;display:grid;grid-template-columns:repeat(6,minmax(130px,1fr));gap:8px;margin:0 0 12px}
+.kpi{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:8px 12px;text-align:left;font:inherit;color:inherit}
+button.kpi{cursor:pointer}
+button.kpi:hover{border-color:var(--text2)}
+button.kpi.on{border-color:var(--brand);box-shadow:inset 0 0 0 1px var(--brand)}
+.kpi .k{font-size:10px;color:var(--text2)}
+.kpi .v{font-size:18px;font-weight:600;margin:2px 0 0;line-height:1.2}
+.kpi .v small{font-size:11px;font-weight:500;color:var(--text2)}
+.kpi .d{font-size:10px;color:var(--text2);margin-top:1px}
+.kpi .d.bad{color:#c8412f}.kpi .d.good{color:#3c9a5a}
+.kcap{position:sticky;left:48px;font-size:10px;color:var(--text2);margin:2px 0 6px}
+@media(max-width:1100px){.kpis{grid-template-columns:repeat(3,minmax(130px,1fr))}}
 
 #pimg{position:fixed;z-index:60;pointer-events:none;display:none;width:200px;height:200px;background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.14);padding:6px}
 #pimg img{display:block;width:100%;height:100%;object-fit:contain}
@@ -140,9 +157,12 @@ td.cell.eq{background:#fff;color:var(--text)}
         <div class="menu">
           <label><input type="checkbox" data-f="disc"> Со скидкой</label>
           <label><input type="checkbox" data-f="nop"> Нет цены</label>
+          <label><input type="checkbox" data-f="below"> Ниже РРЦ</label>
           <label><input type="checkbox" data-f="above"> Выше РРЦ</label>
+          <label><input type="checkbox" data-f="oos"> Нет в наличии</label>
         </div>
       </div>
+      <div class="seg" id="mode" title="Цена полки — на витрине; цена кассы — в корзине после всех скидок площадки"><button data-m="shelf" class="active">Цена полки</button><button data-m="ck">Цена кассы</button></div>
       <span class="count" id="cnt"></span>
       <button class="reset" id="reset" hidden>Сбросить</button>
     </div>
@@ -154,6 +174,8 @@ td.cell.eq{background:#fff;color:var(--text)}
     </div>
   </div>
 
+  <div class="kcap" id="kcap"></div>
+  <div class="kpis" id="kpis"></div>
   <div class="scroll" id="scroll"><table id="tbl"></table></div>
 </div>
 <div class="footer"><span>Hadat Cosmetics · 2026</span><div class="lg"><span>Мин.</span><div class="bar2" id="lg"></div><span>Макс. за период</span></div><span class="demo" id="demoTag">Демо-цены · не из источника</span></div>
@@ -166,7 +188,11 @@ td.cell.eq{background:#fff;color:var(--text)}
    Возвращает { demo, channels, dates, items }:
    channels: [{id, name, full}]
    dates:    ['YYYY-MM-DD', ...]  (по возрастанию, последняя = сегодня)
-   items:    [{sku, title, rrp, prices:{[channelId]:[ {p, base?} | null, ... по dates ]}}]
+   items:    [{sku, title, rrp, prices:{shelf:{[channelId]:[cell|null…]}, ck:{…}}}]
+             cell = {p, base?, seller, n, est?} — лучший (минимальный) оффер среди продавцов в наличии;
+                    {oos:true, p:null, n} — офферы есть, но все не в наличии; null — цены нет.
+             shelf — цена полки (на витрине), ck — цена кассы (в корзине после всех скидок).
+             В режиме кассы base = цена полки, если касса ниже; est = цена кассы не собрана, показана цена полки.
    Источник: Supabase (только чтение, ключ publishable — он публичный по дизайну;
    запись закрыта политиками RLS). Пока в price_observations нет строк,
    цены для России генерируются как ДЕМО (demo:true), товары и РРЦ — настоящие. */
@@ -197,30 +223,64 @@ async function loadData(market='ru'){
   ]);
   const channels=srcs.map(x=>({id:x.id,name:SHORT[x.id]||x.name,full:x.name}));
   const rrpBy=Object.fromEntries(rrps.map(x=>[x.sku,+x.rrp]));
-  const obs=channels.length?await sbAll('/price_observations?select=sku,source_id,observed_on,price,base_price,status&order=id&observed_on=gte.'+dates[0]+'&source_id=in.('+channels.map(c=>c.id).join(',')+')'):[];
-  const items=products.map(x=>({sku:x.sku,title:x.title,rrp:rrpBy[x.sku]??null,prices:Object.fromEntries(channels.map(c=>[c.id,Array(DAYS_MAX).fill(null)]))}));
+  // select=* — чтобы сайт работал и до, и после добавления колонок checkout_price / seller / in_stock
+  const obs=channels.length?await sbAll('/price_observations?select=*&order=id&observed_on=gte.'+dates[0]+'&source_id=in.('+channels.map(c=>c.id).join(',')+')'):[];
+  const blank=()=>Object.fromEntries(channels.map(c=>[c.id,Array(DAYS_MAX).fill(null)]));
+  const items=products.map(x=>({sku:x.sku,title:x.title,rrp:rrpBy[x.sku]??null,prices:{shelf:blank(),ck:blank()}}));
   const bySku=Object.fromEntries(items.map(x=>[x.sku,x]));
   if(obs.length){
-    obs.forEach(o=>{const it=bySku[o.sku],i=dates.indexOf(o.observed_on); if(!it||i<0)return;
-      it.prices[o.source_id][i]=o.status==='ok'&&o.price!=null?{p:+o.price,base:o.base_price!=null?+o.base_price:undefined}:null;});
+    const groups={}; // sku|источник|день -> офферы разных продавцов
+    obs.forEach(o=>{const k=o.sku+'|'+o.source_id+'|'+o.observed_on;(groups[k]||(groups[k]=[])).push(o);});
+    Object.entries(groups).forEach(([k,offers])=>{
+      const [sku,src,day]=k.split('|'), it=bySku[sku], i=dates.indexOf(day);
+      if(!it||i<0||!it.prices.shelf[src])return;
+      it.prices.shelf[src][i]=bestOffer(offers,'shelf');
+      it.prices.ck[src][i]=bestOffer(offers,'ck');
+    });
     return {demo:false,channels,dates,items};
   }
   if(market==='ru'){ // ДЕМО-цены, пока нет реального источника
     let seed=20261020; const rnd=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
+    const SELLERS=['Hadat Official','BeautyLab','Косметика Опт','ProHair Store'];
     items.forEach(it=>channels.forEach(ch=>{
-      let k=0.82+rnd()*0.36, hasData=rnd()>0.07, out=[];
+      let k=0.82+rnd()*0.36, hasData=rnd()>0.07, sh=[], ck=[];
+      const marketplace=ch.id==='wb'||ch.id==='ozon';
+      const n=marketplace?1+Math.floor(rnd()*3):1, seller=marketplace?SELLERS[Math.floor(rnd()*SELLERS.length)]:'';
+      let oosLeft=0;
       for(let i=0;i<DAYS_MAX;i++){
         if(rnd()<0.12) k+=(rnd()-0.5)*0.08;
         k=Math.min(1.25,Math.max(0.7,k));
-        if(!hasData||rnd()<0.01){out.push(null);continue;}
+        if(!hasData||rnd()<0.01){sh.push(null);ck.push(null);continue;}
+        if(oosLeft>0||rnd()<0.008){oosLeft=oosLeft>0?oosLeft-1:2+Math.floor(rnd()*4);const c={oos:true,p:null,n};sh.push(c);ck.push(c);continue;}
         let pr=Math.round(it.rrp*k/10)*10;
         if(rnd()<0.18) pr=it.rrp;
-        out.push(rnd()<0.14?{p:Math.round(pr*0.9/10)*10,base:pr}:{p:pr});
+        const s=rnd()<0.14?{p:Math.round(pr*0.9/10)*10,base:pr}:{p:pr};
+        s.seller=seller; s.n=n; sh.push(s);
+        const kp=rnd()<0.35?Math.round(s.p*(0.85+rnd()*0.12)/10)*10:s.p;
+        ck.push({p:kp,base:kp<s.p?s.p:undefined,seller,n});
       }
-      it.prices[ch.id]=out;
+      it.prices.shelf[ch.id]=sh; it.prices.ck[ch.id]=ck;
     }));
   }
   return {demo:true,channels,dates,items};
+}
+// Лучший оффер дня: минимальная цена среди продавцов в наличии
+function bestOffer(offers,mode){
+  const valid=offers.filter(o=>o.status==='ok'&&o.price!=null);
+  if(!valid.length)return null;
+  const live=valid.filter(o=>o.in_stock!==false);
+  if(!live.length)return {oos:true,p:null,n:valid.length};
+  let best=null;
+  live.forEach(o=>{
+    const shelf=+o.price, hasCk=o.checkout_price!=null;
+    const c=mode==='ck'
+      ?{p:hasCk?+o.checkout_price:shelf,base:hasCk&&+o.checkout_price<shelf?shelf:undefined,est:!hasCk}
+      :{p:shelf,base:o.base_price!=null?+o.base_price:undefined};
+    c.seller=o.seller||'';
+    if(!best||c.p<best.p)best=c;
+  });
+  best.n=live.length;
+  return best;
 }
 
 /* ================== ЛОГИКА ================== */
@@ -234,7 +294,8 @@ const pct=(a,b)=>((a/b-1)*100);
 const sgn=v=>(v>0?'+':'')+v.toFixed(1).replace('.',',')+'%';
 
 const CH='<svg class="chev" viewBox="0 0 8 8" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M1 2.5l3 3 3-3"/></svg>';
-const S={data:null,q:'',src:new Set(),flt:{disc:false,nop:false,above:false},period:'1',from:null,to:null,sort:null,onlyAlerts:false};
+const S={data:null,q:'',src:new Set(),flt:{disc:false,nop:false,below:false,above:false,oos:false},mode:'shelf',period:'1',from:null,to:null,sort:null,onlyAlerts:false};
+const MODE_L={shelf:'цена полки',ck:'цена кассы'};
 const PERIODS=[['1','Сегодня'],['7','7 дней'],['14','14 дней'],['30','30 дней'],['90','90 дней'],['custom','Custom range']];
 
 function visibleIdx(){
@@ -245,17 +306,21 @@ function visibleIdx(){
   }
   const k=+S.period; const out=[];for(let i=n-k;i<n;i++)out.push(i);return out;
 }
-const cellAt=(it,ch,i)=>it.prices[ch][i];
-function lastChange(it,ch){const n=S.data.dates.length,c=it.prices[ch][n-1],p=it.prices[ch][n-2];return c&&p?pct(c.p,p.p):null;}
+const cellAt=(it,ch,i)=>it.prices[S.mode][ch][i];
+const priced=c=>c&&c.p!=null;
+function changeAt(it,ch,i){const c=cellAt(it,ch,i),p=i>0?cellAt(it,ch,i-1):null;return priced(c)&&priced(p)?pct(c.p,p.p):null;}
+function lastChange(it,ch){return changeAt(it,ch,S.data.dates.length-1);}
+const matchQ=it=>{const q=S.q.trim().toLowerCase();return !q||it.title.toLowerCase().includes(q)||it.sku.includes(q);};
 
 function rowsFiltered(idx){
-  const q=S.q.trim().toLowerCase(), last=S.data.dates.length-1;
   return S.data.items.filter(it=>{
-    if(q&&!(it.title.toLowerCase().includes(q)||it.sku.includes(q)))return false;
+    if(!matchQ(it))return false;
     const chs=[...S.src];
     if(S.flt.disc&&!chs.some(ch=>idx.some(i=>cellAt(it,ch,i)?.base)))return false;
     if(S.flt.nop&&!chs.some(ch=>idx.some(i=>!cellAt(it,ch,i))))return false;
-    if(S.flt.above&&!chs.some(ch=>idx.some(i=>{const c=cellAt(it,ch,i);return c&&c.p>it.rrp;})))return false;
+    if(S.flt.below&&!chs.some(ch=>idx.some(i=>{const c=cellAt(it,ch,i);return priced(c)&&c.p<it.rrp;})))return false;
+    if(S.flt.above&&!chs.some(ch=>idx.some(i=>{const c=cellAt(it,ch,i);return priced(c)&&c.p>it.rrp;})))return false;
+    if(S.flt.oos&&!chs.some(ch=>idx.some(i=>cellAt(it,ch,i)?.oos)))return false;
     if(S.onlyAlerts&&!chs.some(ch=>{const v=lastChange(it,ch);return v!==null&&Math.abs(v)>=5;}))return false;
     return true;
   });
@@ -267,12 +332,12 @@ function render(){
   let rows=rowsFiltered(idx);
   if(S.sort){
     const {key,dir}=S.sort;
-    const val=it=>key==='rrp'?it.rrp:(()=>{const c=it.prices[key.ch][key.i];return c?c.p:null;})();
+    const val=it=>key==='rrp'?it.rrp:(()=>{const c=cellAt(it,key.ch,key.i);return priced(c)?c.p:null;})();
     rows=[...rows].sort((a,b)=>{const x=val(a),y=val(b);if(x===null&&y===null)return 0;if(x===null)return 1;if(y===null)return -1;return (x-y)*dir;});
   }
   // шкала: min/max отношения цена/РРЦ по видимым ячейкам
   let mn=Infinity,mx=-Infinity;
-  rows.forEach(it=>chans.forEach(ch=>idx.forEach(i=>{const c=cellAt(it,ch.id,i);if(c){const r=c.p/it.rrp;if(r<mn)mn=r;if(r>mx)mx=r;}})));
+  rows.forEach(it=>chans.forEach(ch=>idx.forEach(i=>{const c=cellAt(it,ch.id,i);if(priced(c)){const r=c.p/it.rrp;if(r<mn)mn=r;if(r>mx)mx=r;}})));
   const span=mx-mn||1;
 
   const arr=(k)=>S.sort&&JSON.stringify(S.sort.key)===JSON.stringify(k)?`<span class="arr">${S.sort.dir>0?'▲':'▼'}</span>`:'';
@@ -287,16 +352,20 @@ function render(){
     h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"><img src="swatches/${it.sku}.webp" width="24" height="24" alt="" loading="lazy" onerror="this.remove()"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${it.rrp==null?'—':fmt(it.rrp)}</td>`;
     chans.forEach(ch=>idx.forEach((i,j)=>{
       const c=cellAt(it,ch.id,i), g=j===0?' gstart':'';
-      if(!c){h+=`<td class="cell none${g}" data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}">—</td>`;return;}
-      if(c.p===it.rrp&&!c.base){h+=`<td class="cell eq${g}" data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}">${fmt(c.p)}</td>`;return;}
+      const at=`data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}"`;
+      if(!c){h+=`<td class="cell none${g}" ${at}>—</td>`;return;}
+      if(c.oos){h+=`<td class="cell oos${g}" ${at}>нет</td>`;return;}
+      const ex=(c.n>1?' multi':'')+(c.est?' est':'');
+      if(c.p===it.rrp&&!c.base){h+=`<td class="cell eq${g}${ex}" ${at}>${fmt(c.p)}</td>`;return;}
       const col=scale((c.p/it.rrp-mn)/span), fg=lum(col)<0.5?'#fff':'#1f1f1f';
-      h+=`<td class="cell${g}" style="background:rgb(${col});color:${fg}" data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}">${fmt(c.p)}${c.base?`<s>${fmt(c.base)}</s>`:''}</td>`;
+      h+=`<td class="cell${g}${ex}" style="background:rgb(${col});color:${fg}" ${at}>${fmt(c.p)}${c.base?`<s>${fmt(c.base)}</s>`:''}</td>`;
     }));
     h+='</tr>';
   });
   $('#tbl').innerHTML=h+'</tbody>';
   $('#cnt').textContent=`${rows.length} из ${D.items.length}`;
-  const dirty=S.q||S.flt.disc||S.flt.nop||S.flt.above||S.onlyAlerts||S.src.size!==D.channels.length;
+  renderKpis(idx,chans);
+  const dirty=S.q||Object.values(S.flt).some(Boolean)||S.onlyAlerts||S.src.size!==D.channels.length;
   $('#reset').hidden=!dirty;
   $('#btnSrc').innerHTML='Источники · '+S.src.size+CH;
   const nf=Object.values(S.flt).filter(Boolean).length;
@@ -307,10 +376,48 @@ function render(){
   $('#lg').style.background='linear-gradient(90deg,'+STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')+')';
 }
 
+/* сводка: позиции «товар × источник» на последний видимый день и изменение к предыдущему */
+function dayStats(i,chans){
+  if(i<0)return null;
+  const s={pos:0,priced:0,below:0,above:0,dev:0,disc:0,oos:0,up:0,down:0};
+  S.data.items.forEach(it=>{ if(!matchQ(it)||it.rrp==null)return;
+    chans.forEach(ch=>{ s.pos++; const c=cellAt(it,ch.id,i); if(!c)return;
+      if(c.oos){s.oos++;return;}
+      s.priced++; s.dev+=pct(c.p,it.rrp);
+      if(c.p<it.rrp)s.below++; else if(c.p>it.rrp)s.above++;
+      if(c.base)s.disc++;
+      const v=changeAt(it,ch.id,i); if(v>0)s.up++; else if(v<0)s.down++;
+    });
+  });
+  s.avg=s.priced?s.dev/s.priced:null;
+  return s;
+}
+function renderKpis(idx,chans){
+  const L=idx[idx.length-1], cur=dayStats(L,chans), prv=dayStats(L-1,chans), D=S.data;
+  const show=cur&&(cur.priced||cur.oos);
+  $('#kpis').hidden=$('#kcap').hidden=!show; if(!show)return;
+  const delta=(k,badUp)=>{ if(!prv)return '<div class="d">&nbsp;</div>';
+    const d=cur[k]-prv[k]; if(!d)return '<div class="d">без изменений</div>';
+    const cls=badUp==null?'':(d>0===badUp?' bad':' good');
+    return `<div class="d${cls}">${d>0?'↑ +':'↓ −'}${Math.abs(d)} к ${fmtDate(D.dates[L-1])}</div>`; };
+  const card=(f,label,val,sub,dl)=>{const tag=f?'button':'div',on=f&&S.flt[f]?' on':'';
+    return `<${tag} class="kpi${on}"${f?` data-k="${f}" type="button" title="Показать только эти товары"`:''}><div class="k">${label}</div><div class="v">${val}${sub?` <small>${sub}</small>`:''}</div>${dl}</${tag}>`;};
+  const avgD=prv&&prv.avg!=null&&cur.avg!=null?cur.avg-prv.avg:null;
+  $('#kcap').textContent=`Сводка на ${fmtDate(D.dates[L])} · ${MODE_L[S.mode]} · позиций «товар × источник»: ${cur.pos}`;
+  $('#kpis').innerHTML=
+    card('below','Ниже РРЦ',cur.below,'из '+cur.priced,delta('below',true))+
+    card('above','Выше РРЦ',cur.above,'',delta('above',null))+
+    card(null,'Средняя цена к РРЦ',cur.avg==null?'—':sgn(cur.avg),'',`<div class="d">${avgD==null?'&nbsp;':(Math.abs(avgD)<0.05?'без изменений':(avgD>0?'↑ +':'↓ −')+Math.abs(avgD).toFixed(1).replace('.',',')+' п.п.')}</div>`)+
+    card('disc','Со скидкой',cur.disc,'',delta('disc',null))+
+    card('oos','Нет в наличии',cur.oos,'',delta('oos',true))+
+    card(null,'Цена изменилась',`↑ ${cur.up} · ↓ ${cur.down}`,'',`<div class="d">${L>0?'к '+fmtDate(D.dates[L-1]):'&nbsp;'}</div>`);
+}
+
 let D,bound=false;
 function layout(){
   const b=document.querySelector('#mon .bar'); if(!b||b.offsetParent===null)return;
-  b.style.width=(document.documentElement.clientWidth-96)+'px';
+  const w=(document.documentElement.clientWidth-96)+'px';
+  b.style.width=w; $('#kpis').style.width=w; $('#kcap').style.width=w;
   document.documentElement.style.setProperty('--barh',b.offsetHeight+'px');
   const r=document.querySelector('#tbl thead tr'); if(r)document.documentElement.style.setProperty('--r1h',r.offsetHeight+'px');
 }
@@ -337,6 +444,14 @@ function init(data){
     render();
   });
   $('#ddFlt').addEventListener('change',e=>{const f=e.target.dataset.f;if(f){S.flt[f]=e.target.checked;render();}});
+  $('#mode').addEventListener('click',e=>{
+    const m=e.target.dataset.m; if(!m||m===S.mode)return; S.mode=m;
+    document.querySelectorAll('#mode button').forEach(b=>b.classList.toggle('active',b.dataset.m===m)); render();
+  });
+  $('#kpis').addEventListener('click',e=>{
+    const f=e.target.closest('[data-k]')?.dataset.k; if(!f)return;
+    S.flt[f]=!S.flt[f]; const cb=document.querySelector(`[data-f="${f}"]`); if(cb)cb.checked=S.flt[f]; render();
+  });
   $('#seg').addEventListener('click',e=>{
     const p=e.target.dataset.p; if(!p)return; S.period=p; S.sort=null;
     document.querySelectorAll('#seg button').forEach(b=>b.classList.toggle('active',b.dataset.p===p));
@@ -372,15 +487,18 @@ function init(data){
   const tip=$('#tip');
   $('#tbl').addEventListener('mousemove',e=>{
     const td=e.target.closest('td.cell'); if(!td){tip.style.display='none';return;}
-    const it=D.items.find(x=>x.sku===td.dataset.s), i=+td.dataset.i, ch=td.dataset.ch, c=it.prices[ch][i];
+    const it=D.items.find(x=>x.sku===td.dataset.s), i=+td.dataset.i, ch=td.dataset.ch, c=cellAt(it,ch,i);
     const name=D.channels.find(x=>x.id===ch).name;
-    let t=`<b>${it.sku}</b> · ${name} · ${fmtDate(D.dates[i])}<br>`;
+    let t=`<b>${it.sku}</b> · ${name} · ${fmtDate(D.dates[i])} · ${MODE_L[S.mode]}<br>`;
     if(!c)t+='<span class="m">нет цены</span>';
+    else if(c.oos)t+=`<span class="m">нет в наличии${c.n>1?' ни у одного из '+c.n+' продавцов':''}</span>`;
     else{
       t+=`${fmt(c.p)} ₽ · к РРЦ ${sgn(pct(c.p,it.rrp))}`;
-      if(c.base)t+=`<br><span class="m">базовая ${fmt(c.base)} ₽ · скидка ${Math.round((1-c.p/c.base)*100)}%</span>`;
-      const pv=i>0?it.prices[ch][i-1]:null;
-      t+=`<br><span class="m">к пред. дню: ${pv?sgn(pct(c.p,pv.p)):'—'}</span>`;
+      if(c.base)t+=`<br><span class="m">${S.mode==='ck'?'на полке':'базовая'} ${fmt(c.base)} ₽ · скидка ${Math.round((1-c.p/c.base)*100)}%</span>`;
+      if(c.est)t+='<br><span class="m">цена кассы не собрана — показана цена полки</span>';
+      if(c.seller||c.n>1)t+=`<br><span class="m">${c.n>1?'мин. из '+c.n+' продавцов':'продавец'}${c.seller?': '+c.seller:''}</span>`;
+      const v=changeAt(it,ch,i);
+      t+=`<br><span class="m">к пред. дню: ${v==null?'—':sgn(v)}</span>`;
     }
     tip.innerHTML=t; tip.style.display='block';
     tip.style.left=Math.min(e.clientX+12,innerWidth-tip.offsetWidth-8)+'px'; tip.style.top=(e.clientY+14)+'px';
@@ -389,9 +507,9 @@ function init(data){
   $('#exp').addEventListener('click',()=>{
     const idx=visibleIdx(),chans=D.channels.filter(c=>S.src.has(c.id)),rows=rowsFiltered(idx);
     const head=['SKU','Название','РРЦ'];chans.forEach(c=>idx.forEach(i=>head.push(c.name+' '+D.dates[i])));
-    const lines=[head].concat(rows.map(it=>{const r=[it.sku,'"'+it.title+'"',it.rrp];chans.forEach(c=>idx.forEach(i=>{const x=it.prices[c.id][i];r.push(x?x.p:'');}));return r;}));
+    const lines=[head].concat(rows.map(it=>{const r=[it.sku,'"'+it.title+'"',it.rrp];chans.forEach(c=>idx.forEach(i=>{const x=cellAt(it,c.id,i);r.push(x?(x.oos?'нет в наличии':x.p):'');}));return r;}));
     const blob=new Blob(['﻿'+lines.map(r=>r.join(';')).join('\n')],{type:'text/csv;charset=utf-8'});
-    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='hadat-prices.csv';a.click();URL.revokeObjectURL(a.href);
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`hadat-prices-${S.mode==='ck'?'kassa':'polka'}.csv`;a.click();URL.revokeObjectURL(a.href);
   });
   }
   render();
