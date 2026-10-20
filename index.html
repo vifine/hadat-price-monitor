@@ -11,9 +11,10 @@
   font-family:Montserrat,system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--page);color:var(--text);font-size:12px;min-height:100vh;display:flex;flex-direction:column;padding-top:56px}
+body{margin:0;background:var(--page);color:var(--text);font-size:12px;min-height:100vh;display:flex;flex-direction:column;padding-top:56px;padding-bottom:28px}
 body.home{background:#fff}
 body.home .footer .lg,body.home .footer .demo{visibility:hidden}
+body.home .footer{background:#fff}
 .footer{background:inherit}
 .main{flex:1 0 auto}
 a.brand{color:#fff;text-decoration:none;cursor:pointer}
@@ -39,7 +40,7 @@ a.brand{color:#fff;text-decoration:none;cursor:pointer}
 .chip{border:1px solid #d6d2c4;border-radius:6px;padding:6px 14px;font-size:12px;font-weight:500;background:#fff}
 .card .upd2{font-size:12px;color:#6c757d;margin-bottom:16px}
 .card .go{background:#1d1d1b;color:#fff;border-radius:8px;height:41px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
-.footer{margin-top:auto;height:28px;flex:none;background:var(--page);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:10px;color:#6c757d;z-index:20}
+.footer{position:fixed;left:0;right:0;bottom:0;height:28px;background:var(--page);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:10px;color:#6c757d;z-index:20}
 .footer .lg{display:flex;align-items:center;gap:10px;font-size:12px}
 .footer .lg .bar2{width:240px;height:8px;border-radius:2px}
 .footer .demo{font-size:9px;color:#6b6b6b}
