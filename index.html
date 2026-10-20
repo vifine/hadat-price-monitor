@@ -31,7 +31,7 @@ a.brand{color:#fff;text-decoration:none;cursor:pointer}
 .card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #d6d2c4;border-radius:12px;padding:30px;transition:background .15s,border-color .15s}
 .card:hover,.card:focus-visible{background:#f6f6f4;border-color:#1d1d1b;outline:none}
 .card .top{display:flex;align-items:center;gap:14px;margin-bottom:20px}
-.card .flag{font-size:32px;line-height:1}
+.card .flag{flex:none;display:block}
 .card h2{margin:0;font-size:22px;font-weight:700}
 .card .desc{font-size:12px;color:#6c757d;margin-top:2px}
 .card .lbl{font-size:12px;color:#6c757d;margin-bottom:10px}
@@ -116,10 +116,10 @@ td.cell.eq{background:#fff;color:var(--text)}
     <div class="eyebrow">ВЫБЕРИТЕ РЫНОК</div>
     <h1>Мониторинг цен по рынкам</h1>
     <div class="cards">
-      <a class="card" href="#/ru"><div class="top"><span class="flag">🇷🇺</span><div><h2>Россия</h2><div class="desc">Маркетплейсы и магазины, рубли (RUB)</div></div></div>
+      <a class="card" href="#/ru"><div class="top"><svg class="flag" viewBox="0 0 32 22" width="32" height="22" aria-label="Россия"><rect width="32" height="22" rx="3" fill="#fff"/><rect y="7.33" width="32" height="7.34" fill="#0039a6"/><rect y="14.67" width="32" height="7.33" fill="#d52b1e"/><rect width="32" height="22" rx="3" fill="none" stroke="#0000001a"/></svg><div><h2>Россия</h2><div class="desc">Маркетплейсы и магазины, рубли (RUB)</div></div></div>
         <div class="lbl">ИСТОЧНИКИ</div><div class="chips"><span class="chip">Wildberries</span><span class="chip">Ozon</span><span class="chip">Lamoda</span><span class="chip">Золотое Яблоко</span></div>
         <div class="upd2 stamp"></div><div class="go">Открыть мониторинг</div></a>
-      <a class="card" href="#/us"><div class="top"><span class="flag">🇺🇸</span><div><h2>США</h2><div class="desc">Amazon и Shopify, доллары (USD)</div></div></div>
+      <a class="card" href="#/us"><div class="top"><svg class="flag" viewBox="0 0 32 22" width="32" height="22" aria-label="США"><rect width="32" height="22" rx="3" fill="#fff"/><rect y="0.00" width="32" height="3.14" fill="#b22234"/><rect y="6.29" width="32" height="3.14" fill="#b22234"/><rect y="12.57" width="32" height="3.14" fill="#b22234"/><rect y="18.86" width="32" height="3.14" fill="#b22234"/><rect width="14" height="11.8" fill="#3c3b6e"/><circle cx="2.4" cy="2.2" r=".7" fill="#fff"/><circle cx="5.3" cy="2.2" r=".7" fill="#fff"/><circle cx="8.2" cy="2.2" r=".7" fill="#fff"/><circle cx="11.1" cy="2.2" r=".7" fill="#fff"/><circle cx="2.4" cy="4.6" r=".7" fill="#fff"/><circle cx="5.3" cy="4.6" r=".7" fill="#fff"/><circle cx="8.2" cy="4.6" r=".7" fill="#fff"/><circle cx="11.1" cy="4.6" r=".7" fill="#fff"/><circle cx="2.4" cy="7.0" r=".7" fill="#fff"/><circle cx="5.3" cy="7.0" r=".7" fill="#fff"/><circle cx="8.2" cy="7.0" r=".7" fill="#fff"/><circle cx="11.1" cy="7.0" r=".7" fill="#fff"/><circle cx="2.4" cy="9.4" r=".7" fill="#fff"/><circle cx="5.3" cy="9.4" r=".7" fill="#fff"/><circle cx="8.2" cy="9.4" r=".7" fill="#fff"/><circle cx="11.1" cy="9.4" r=".7" fill="#fff"/><rect width="32" height="22" rx="3" fill="none" stroke="#0000001a"/></svg><div><h2>США</h2><div class="desc">Amazon и Shopify, доллары (USD)</div></div></div>
         <div class="lbl">ИСТОЧНИКИ</div><div class="chips"><span class="chip">Amazon</span><span class="chip">Shopify</span></div>
         <div class="upd2 stamp"></div><div class="go">Открыть мониторинг</div></a>
     </div>
