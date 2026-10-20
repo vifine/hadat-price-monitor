@@ -14,8 +14,7 @@
 body{margin:0;background:var(--page);color:var(--text);font-size:12px;min-height:100vh;display:flex;flex-direction:column;padding-top:56px}
 body.home{background:#fff}
 body:not(.home):not(.skup){width:max-content;min-width:100%}
-body.skup .footer .lg{visibility:hidden}
-body.home .footer .lg,body.home .footer .demo{visibility:hidden}
+body.home .footer .demo{visibility:hidden}
 body.home .footer{background:#fff}
 .footer{background:inherit}
 .main{flex:1 0 auto}
@@ -43,8 +42,6 @@ a.brand{color:#fff;text-decoration:none;cursor:pointer}
 .card .upd2{font-size:12px;color:#6c757d;margin-bottom:16px}
 .card .go{background:#1d1d1b;color:#fff;border-radius:8px;height:41px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500}
 .footer{position:sticky;left:0;flex:none;height:28px;background:var(--page);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;font-size:10px;color:#6c757d;z-index:20}
-.footer .lg{display:flex;align-items:center;gap:10px;font-size:12px}
-.footer .lg .bar2{width:240px;height:8px;border-radius:2px}
 .footer .demo{font-size:9px;color:#6b6b6b}
 .sico{position:absolute;left:10px;top:8px;width:12px;height:12px;pointer-events:none;color:var(--text2)}
 .chev{width:8px;height:8px;margin-left:2px}
@@ -281,7 +278,7 @@ table.st td.dev{font-weight:600}
     <table class="st" id="st"></table>
   </div>
 </div>
-<div class="footer"><span>Hadat Cosmetics · 2026</span><div class="lg"><span>Мин.</span><div class="bar2" id="lg"></div><span>Макс. за период</span></div><span class="demo" id="demoTag">Демо-цены · не из источника</span></div>
+<div class="footer"><span>Hadat Cosmetics · 2026</span><span class="demo" id="demoTag">Демо-цены · не из источника</span></div>
 <div id="pimg"><img alt=""></div>
 <div id="tip"></div>
 
@@ -480,7 +477,6 @@ function render(){
   $('#act').innerHTML=(on.length?`Показано: <b>${on.join(', ')}</b> · `:'')+`<b>${rows.length}</b> из ${D.items.length} товаров`+(dirty?' · <button class="reset" id="reset" type="button">Сбросить</button>':'');
   $('#btnSrc').innerHTML='Источники · '+S.src.size+CH;
   layout();
-  $('#lg').style.background='linear-gradient(90deg,'+STOPS.map(([t,c])=>`rgb(${c}) ${t*100}%`).join(',')+')';
 }
 
 /* сводка: число товаров со статусом на последний день периода (как в таблице) и изменение к предыдущему дню */
