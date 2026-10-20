@@ -294,7 +294,7 @@ function bestOffer(offers,mode){
 /* ================== ЛОГИКА ================== */
 const $=s=>document.querySelector(s);
 const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ');
-const STOPS=[[0,[76,175,106]],[.25,[168,207,74]],[.5,[242,216,75]],[.75,[242,154,61]],[1,[224,70,60]]];
+const STOPS=[[0,[224,70,60]],[.25,[242,154,61]],[.5,[242,216,75]],[.75,[168,207,74]],[1,[76,175,106]]]; // мин — красный, макс — зелёный
 function scale(t){t=Math.min(1,Math.max(0,t));for(let i=1;i<STOPS.length;i++){if(t<=STOPS[i][0]){const[a,ca]=STOPS[i-1],[b,cb]=STOPS[i],u=(t-a)/(b-a);return ca.map((v,j)=>Math.round(v+(cb[j]-v)*u));}}return STOPS[4][1];}
 const lum=c=>(0.299*c[0]+0.587*c[1]+0.114*c[2])/255;
 const fmtDate=s=>s.slice(8,10)+'.'+s.slice(5,7);
