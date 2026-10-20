@@ -112,6 +112,8 @@ td.cell.eq{background:#fff;color:var(--text)}
 td.cell.oos{background:repeating-linear-gradient(135deg,var(--nodata) 0 4px,#f3f3f1 4px 8px);color:var(--text2);font-size:8px}
 td.cell.multi::after{content:"";position:absolute;right:2px;top:2px;width:4px;height:4px;border-radius:50%;background:currentColor;opacity:.55}
 td.cell.est{font-style:italic}
+td.cell.dim{opacity:.22}
+td.cell.hit{box-shadow:inset 0 0 0 2px #1d1d1b;font-weight:600}
 
 /* сводка */
 .kpis{position:sticky;left:48px;z-index:3;display:grid;grid-template-columns:repeat(6,minmax(130px,1fr));gap:8px;margin:0 0 12px}
@@ -411,11 +413,12 @@ function render(){
   chans.forEach(ch=>idx.forEach((i,j)=>{h+=`<th class="dt${j===0?' first':''}" data-ch="${ch.id}" data-i="${i}">${fmtDate(D.dates[i])}${arr({ch:ch.id,i})}</th>`;}));
   h+='</tr></thead><tbody>';
   if(!rows.length)h+=`<tr><td colspan="${2+chans.length*idx.length}" class="empty">Ничего не найдено</td></tr>`;
+  const onK=FLT.map(f=>f[0]).filter(k=>S.flt[k]), Lv=idx[idx.length-1];
   rows.forEach(it=>{
     const hue=[...it.title.split(' ')[0]].reduce((a,c)=>a+c.charCodeAt(0),0)*37%360;
     h+=`<tr><td class="c-prod"><div class="prod"><div class="sw" style="background:hsl(${hue} 22% 82%)"><img src="swatches/${it.sku}.webp" width="24" height="24" alt="" loading="lazy" onerror="this.remove()"></div><div class="pt"><b title="${it.title}">${it.title}</b><i>${it.sku}</i></div></div></td><td class="c-rrp">${it.rrp==null?'—':fmt(it.rrp)}</td>`;
     chans.forEach(ch=>idx.forEach((i,j)=>{
-      const c=cellAt(it,ch.id,i), g=j===0?' gstart':'';
+      const c=cellAt(it,ch.id,i), g=(j===0?' gstart':'')+(onK.length?(i===Lv&&onK.some(k=>cellHas(k,it,ch.id,i))?' hit':' dim'):'');
       const at=`data-s="${it.sku}" data-ch="${ch.id}" data-i="${i}"`;
       if(!c){h+=`<td class="cell none${g}" ${at}>—</td>`;return;}
       if(c.oos){h+=`<td class="cell oos${g}" ${at}>нет</td>`;return;}
